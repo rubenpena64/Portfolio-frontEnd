@@ -1,0 +1,52 @@
+/*
+body {
+    background: #323232;
+    font-size: 16px;
+    font-family: "Open Sans", Arial, Sans-serif;
+}
+*/
+/* ----- ----- HEADER ----- ----- */
+header .logo {
+    padding-bottom: 1.25em;
+}
+
+header .logo img {
+    height: 80px;
+}
+
+header .logo a {
+    display: inline-block;
+}
+
+header .redes-sociales {
+    text-align: right;
+    line-height: 5em;
+}
+
+header .redes-sociales a {
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    text-align: center;
+    line-height: 2.5em;
+    display: inline-block;
+    background: #aaa;
+    color: #fff;
+    margin-left: 1.25em;
+}
+
+header .redes-sociales a.instagram {
+    background: #c05554;
+}
+
+header .redes-sociales a.github {
+    background: #554488;
+}
+
+header .redes-sociales a.twitter {
+    background: #1da1f2;
+}
+
+header .redes-sociales a:hover {
+    background: #222;
+}

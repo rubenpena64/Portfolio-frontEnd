@@ -8,13 +8,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-
     <link rel="stylesheet" href="css/estilos.css">
     <title>Ruben Peña - Porfolio personal</title>
+
 </head>
 <!--Indentar ALT-shift-f-->
 
 <body>
+    <!-----------------El header---------------------------->
     <header class="p-3 text-bg-dark">
         <nav class=".navbar-brand">
             <div class="container">
@@ -36,21 +37,20 @@
             </div>
         </nav>
     </header>
-    <!-- #Acerca -->
+    <!--------------------- #Acerca -------------------------->
     <section class="main">
         <div class="container">
             <div class="row">
                 <div class="align-self-center">
                     <div class="foto">
-                        <img src="img/ruben.jpg" alt="Ruben Peña" width="115"
-                            class="border border-info border-opacity-10 border-3 rounded-4">
+                        <img src="img/ru.jpg" alt="Ruben Peña" width="115">
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <H1 class="H2 text-white" style="--bs-text-opacity: .8">Ruben Peña</H1>
+                            <H1 class="H2 text-white mt-3" style="--bs-text-opacity: .8">Ruben Peña</H1>
                         </div>
                     </div>
-                    <H4 class="H4 text-white" style="--bs-text-opacity: .8">Desarrollador web full stack Junior</H4>
+                    <H4 class="H4 text-white mt-3" style="--bs-text-opacity: .8">Desarrollador web full stack Junior</H4>
                 </div>
 
             </div>
@@ -66,13 +66,13 @@
             </div>
         </div>
     </section>
-    <!-- #Experiencia -->
+    <!------------------------- #Experiencia -------------------->
     <section class="expe mt-4">
         <div class="container caja">
             <div class="row">
                 <div class="col-11 tit">
                     <H4>Experiencia</H4>
-                </div> 
+                </div>
                 <div class="col-1 align-self-center text-center crud">
                     <a href="#"><i class="bi bi-plus-square"></i></a>
                 </div>
@@ -100,13 +100,18 @@
         </div>
     </section>
 
-    <!-- #Educacion -->
+    <!------------------------- #Educación -------------------->
+    <section class="expe mt-4">
     <section class="educa mt-4">
         <div class="container caja">
-            <div class="col-12 tit">
-                <H4>Educación</H4>
-            </div>
             <div class="row">
+                <div class="col-11 tit">
+                    <H4>Educación</H4>
+                </div>
+                <div class="col-1 align-self-center text-center crud">
+                    <a href="#"><i class="bi bi-plus-square"></i></a>
+                </div>
+
                 <div class="col-9">
                     <p class="h5 mt-3">Lorem, ipsum dolor.</p>
                     <p class="h6">1900-1900</p>
@@ -141,34 +146,24 @@
             </div>
         </div>
     </section>
-    <!-- skills-->
+    <!-------------------------- skills------------------------------------->
     <section class="skills mt-4">
-        <div class="container caja">
+        <div class="container caja pb-5">
             <div class="row justify-content-around">
-                <div class="col-12 tit">
-                    <H4>Hard and soft skills</H4>
-                </div>
-                <div class="unskill mt-4">
-                    <div class="outer">
-                        <div class="inner">                           
-                            <div id="nivel">65%</div>                          
-                        </div>
+                <div class="row justify-content-around">
+                    <div class="col-9 tit">
+                        <H4>Hard and soft skills</H4>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300px" height="300px">
-                        <defs>
-                            <linearGradient id="GradientColor">
-                                <stop offset="0%" stop-color="#e91e63" />
-                                <stop offset="100%" stop-color="#673ab7" />
-                            </linearGradient>
-                        </defs>
-                        <circle cx="80" cy="80" r="70" stroke-linecap="round" />
-                    </svg>
+                    <div class="col-3 align-self-center text-end crud">
+                        <a href="#"><i class="bi bi-plus-square"></i></a>
+                    </div>
+                </div>
+                <!----------------Skill----------->
+                <div class="unskill mt-4">
 
-                </div>
-                <div class="unskill mt-4">
                     <div class="outer">
                         <div class="inner">
-                            <div id="nivel">65%</div>
+                            <div class="skill"><span class="nivel">70</span>%<br>HTML</div>
                         </div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
@@ -178,62 +173,73 @@
                                 <stop offset="100%" stop-color="#673ab7" />
                             </linearGradient>
                         </defs>
-                        <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                        <circle class="circulos" cx="80" cy="80" r="70" stroke-linecap="round" />
                     </svg>
+                    <div class="crud">
+                        <a href="#"><i class="bi bi-pencil"></i></a>
+                    </div>
                 </div>
+                <!----------------Skill----------->
                 <div class="unskill mt-4">
                     <div class="outer">
                         <div class="inner">
-                            <div id="nivel">65%</div>
+                            <div class="skill"><span class="nivel">55</span>%<br>CSS</div>
                         </div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                        <defs>
-                            <linearGradient id="GradientColor">
-                                <stop offset="0%" stop-color="#e91e63" />
-                                <stop offset="100%" stop-color="#673ab7" />
-                            </linearGradient>
-                        </defs>
-                        <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                        <circle class="circulos" cx="80" cy="80" r="70" stroke-linecap="round" />
                     </svg>
+                    <div class="crud">
+                        <a href="#"><i class="bi bi-pencil"></i></a>
+                    </div>
                 </div>
+                <!----------------Skill----------->
                 <div class="unskill mt-4">
                     <div class="outer">
                         <div class="inner">
-                            <div id="nivel">65%</div>
+                            <div class="skill"><span class="nivel">40</span>%<br>JS</div>
                         </div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                        <defs>
-                            <linearGradient id="GradientColor">
-                                <stop offset="0%" stop-color="#e91e63" />
-                                <stop offset="100%" stop-color="#673ab7" />
-                            </linearGradient>
-                        </defs>
-                        <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                        <circle class="circulos" cx="80" cy="80" r="70" stroke-linecap="round" />
                     </svg>
+                    <div class="crud">
+                        <a href="#"><i class="bi bi-pencil"></i></a>
+                    </div>
                 </div>
+                <!----------------Skill----------->
+                <div class="unskill mt-4">
+                    <div class="outer">
+                        <div class="inner">
+                            <div class="skill"><span class="nivel">10</span>%<br>Java</div>
+                        </div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                        <circle class="circulos" cx="80" cy="80" r="70" stroke-linecap="round" />
+                    </svg>
+                    <div class="crud">
+                        <a href="#"><i class="bi bi-pencil"></i></a>
+                    </div>
+                </div>
+                <!----------------Skill----------->
                 <div class="col-12 col-lg-6 unskill mt-4">
                     <div class="outer">
                         <div class="inner">
-                            <div id="nivel">65%</div>
+                            <div class="skill"><span class="nivel">80</span>%<br>C</div>
                         </div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                        <defs>
-                            <linearGradient id="GradientColor">
-                                <stop offset="0%" stop-color="#e91e63" />
-                                <stop offset="100%" stop-color="#673ab7" />
-                            </linearGradient>
-                        </defs>
-                        <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                        <circle class="circulos" cx="80" cy="80" r="70" stroke-linecap="round" />
                     </svg>
+                    <div class="crud">
+                        <a href="#"><i class="bi bi-pencil"></i></a>
+                    </div>
                 </div>
 
             </div>
         </div>
     </section>
-    <!-- #Desarrollos -->
+    <!---------------------- #Desarrollos ----------------------------------->
     <section class="desar mt-4">
         <div class="container caja">
             <div class="row justify-content-around">
@@ -241,11 +247,11 @@
                     <H4>Desarrollos</H4>
                 </div>
                 <div class="col-3 align-self-center text-end crud">
-                    <a href="#"><i class="bi bi-pencil"></i></a>
-                    <a href="#"><i class="bi bi-trash3"></i></a>
+                    <a href="#"><i class="bi bi-plus-square"></i></a>
                 </div>
-            </div>
+            </div>            
             <div class="row justify-content-around">
+                  <!----------------un desarrollo------------------>
                 <div class="col-10 col-sm-7 col-md-5 col-xl-4 post">
                     <div class="contenedor">
                         <div class="thumber">
@@ -257,13 +263,14 @@
                             <p class="extracto">Maecenas dapibus dui in mi convallis ornare. Maecenas enim
                                 nulla,
                                 porta sit amet sem eu, vehicula sagittis ex. Nullam consectetur quam nuon.</p>
-                            <div class="categorias">
-                                <a href="#">HTML</a>
-                                <a href="#">CSS</a>
+                            <div class="col-3 align-self-center text-end crud2">
+                                <a href="#"><i class="bi bi-pencil"></i></a>
+                                <a href="#"><i class="bi bi-trash3"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
+                 <!----------------un desarrollo------------------>
                 <div class="col-10 col-sm-7 col-md-5 col-xl-4 post">
                     <div class="contenedor">
                         <div class="thumber">
@@ -275,13 +282,14 @@
                             <p class="extracto">Maecenas dapibus dui in mi convallis ornare. Maecenas enim
                                 nulla,
                                 porta sit amet sem eu, vehicula sagittis ex. Nullam consectetur quam nuon.</p>
-                            <div class="categorias">
-                                <a href="#">HTML</a>
-                                <a href="#">CSS</a>
+                            <div class="col-3 align-self-center text-end crud2">
+                                <a href="#"><i class="bi bi-pencil"></i></a>
+                                <a href="#"><i class="bi bi-trash3"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
+                  <!----------------un desarrollo------------------>
                 <div class="col-10 col-sm-7 col-md-5 col-xl-4 post">
                     <div class="contenedor">
                         <div class="thumber">
@@ -293,13 +301,33 @@
                             <p class="extracto">Maecenas dapibus dui in mi convallis ornare. Maecenas enim
                                 nulla,
                                 porta sit amet sem eu, vehicula sagittis ex. Nullam consectetur quam nuon.</p>
-                            <div class="categorias">
-                                <a href="#">HTML</a>
-                                <a href="#">CSS</a>
+                            <div class="col-3 align-self-center text-end crud2">
+                                <a href="#"><i class="bi bi-pencil"></i></a>
+                                <a href="#"><i class="bi bi-trash3"></i></a>
+                            </div>>
+                        </div>
+                    </div>
+                </div>
+                  <!----------------un desarrollo------------------>
+                <div class="col-10 col-sm-7 col-md-5 col-xl-4 post">
+                    <div class="contenedor">
+                        <div class="thumber">
+                            <a href="#"><img src="img/ex1.jpg" alt="" width="100%"></a>
+                        </div>
+                        <div class="info">
+                            <h2 class="titulo"><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                    elit.</a></h2>
+                            <p class="extracto">Maecenas dapibus dui in mi convallis ornare. Maecenas enim
+                                nulla,
+                                porta sit amet sem eu, vehicula sagittis ex. Nullam consectetur quam nuon.</p>
+                            <div class="col-3 align-self-center text-end crud2">
+                                <a href="#"><i class="bi bi-pencil"></i></a>
+                                <a href="#"><i class="bi bi-trash3"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
+                  <!----------------un desarrollo------------------>
                 <div class="col-10 col-sm-7 col-md-5 col-xl-4 post">
                     <div class="contenedor">
                         <div class="thumber">
@@ -311,27 +339,9 @@
                             <p class="extracto">Maecenas dapibus dui in mi convallis ornare. Maecenas enim
                                 nulla,
                                 porta sit amet sem eu, vehicula sagittis ex. Nullam consectetur quam nuon.</p>
-                            <div class="categorias">
-                                <a href="#">HTML</a>
-                                <a href="#">CSS</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-10 col-sm-7 col-md-5 col-xl-4 post">
-                    <div class="contenedor">
-                        <div class="thumber">
-                            <a href="#"><img src="img/ex1.jpg" alt="" width="100%"></a>
-                        </div>
-                        <div class="info">
-                            <h2 class="titulo"><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                    elit.</a></h2>
-                            <p class="extracto">Maecenas dapibus dui in mi convallis ornare. Maecenas enim
-                                nulla,
-                                porta sit amet sem eu, vehicula sagittis ex. Nullam consectetur quam nuon.</p>
-                            <div class="categorias">
-                                <a href="#">HTML</a>
-                                <a href="#">CSS</a>
+                            <div class="col-3 align-self-center text-end crud2">
+                                <a href="#"><i class="bi bi-pencil"></i></a>
+                                <a href="#"><i class="bi bi-trash3"></i></a>
                             </div>
                         </div>
                     </div>
@@ -341,19 +351,15 @@
         </div>
     </section>
     <script>
-        let numero = document.getElementById("nivel");
-        let contador = 0;
-        setInterval(() => {
-            if (contador == 65) {
-                clearInterval();
-            } else {
-                contador++;
-                numero.innerHTML = contador + "%";
-            }
+        const niveles = document.getElementsByClassName('nivel');
+        const circulos = document.getElementsByClassName('circulos');
 
-        }, 20);
+        for (let i = 0; i < niveles.length; i++) {
+            circulos[i].style.strokeDashoffset = 472 - 472 * niveles[i].textContent / 100;
+        };      //la vuelta completa es 472
     </script>
+
 </body>
 <footer>
-    <br><br><br><br>
+    
 </footer>

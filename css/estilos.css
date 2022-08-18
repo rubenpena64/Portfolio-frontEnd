@@ -57,6 +57,12 @@ header .btn {
     margin-top: -60px;
 }
 
+.main .foto img {
+    border-radius: 20%;
+    vertical-align: top;
+    border: 5px solid rgba(48, 113, 189, 0.4); }
+
+/* ----- ----- HEADER ----- ----- */
 .crud a {
     border-radius: 40%;
     width: 2.5em;
@@ -70,6 +76,20 @@ header .btn {
 .crud a:Hover {
     background: #ddd;
     color: #222;
+}
+.crud2 a {
+    border-radius: 40%;
+    width: 2.5em;
+    height: 2.5em;
+    text-align: center;
+    line-height: 2.5em;
+    display: inline-block;
+    color: #222;
+}
+
+.crud2 a:Hover {
+    background: #222;
+    color: #ddd;
 }
 
 .expe .caja,
@@ -122,30 +142,24 @@ header .btn {
         inset -4px -4px 4px -1px rgba(0, 0, 0, 0.9);
 }
 
-#nivel {
+.skill {
     font-size: medium;
     font-weight: 500;
     color: #ccc;
+    text-align: center;
 }
 
 circle {
     fill: none;
     stroke: url(#GradientColor);
     stroke-width: 20px;
-    stroke-dasharray: 472;
-    stroke-dashoffset: 472;
-    animation: anim 2s linear forwards;
+    stroke-dasharray: 472;    
+    stroke-dashoffset: 306;
 }
 
 svg {
     position: absolute;
-    top: 0;    
-}
-
-@keyframes anim {
-    100% {
-        stroke-dashoffset: 165;
-    }
+    top: 0;
 }
 
 .caja .post {
@@ -189,22 +203,3 @@ svg {
     overflow: hidden;
 }
 
-.caja .post .info .categorias ul {
-    list-style: none;
-}
-
-.caja .post .info .categorias ul li {
-    display: inline-block;
-}
-
-.caja .post .info .categorias a {
-    color: #909090;
-    font-size: 1em;
-    font-weight: bold;
-    margin-right: 1.25em;
-}
-
-.caja .post .info .categorias a:hover {
-    color: #5f6ad4;
-    text-decoration: none;
-}

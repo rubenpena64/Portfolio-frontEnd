@@ -1,0 +1,107 @@
+{
+    "acerca": {
+        "quiensoy": "Soy Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quibusdam ea minima nobis? Animi tempora consequuntur eaque minus praesentium necessitatibus.",
+        "lugar": "General Pacheco",
+        "Otros": "Lectura, fotografia"
+    },
+    "skills": [
+        {
+            "nombre": "A",
+            "valor": 1
+        },
+        {
+            "nombre": "B",
+            "valor": 25
+        },
+        {
+            "nombre": "C",
+            "valor": 50
+        },
+        {
+            "nombre": "D",
+            "valor": 60
+        },
+        {
+            "nombre": "E",
+            "valor": 70
+        },
+        {
+            "nombre": "F",
+            "valor": 80
+        },
+        {
+            "nombre": "G",
+            "valor": 90
+        },
+        {
+            "nombre": "H",
+            "valor": 100
+        }
+    ],
+    "experiencia": [
+        {
+            "empresa": "Branko S.R.L.",
+            "anios": "2000-2010",
+            "puesto": "empleado"
+        },
+        {
+            "empresa": "A&L Integral Trade",
+            "anios": "2010-2020",
+            "puesto": "empleado2"
+        },
+        {
+            "empresa": "Otro",
+            "anios": "2020-",
+            "puesto": "empleado3"
+        }
+    ],
+    "educacion": [
+        {
+            "titulo": "Tecnico electromecánico",
+            "anios": "1978 - 1983",
+            "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate dolores ipsam, voluptates ullam modi a! Dolorum ipsa quidem reiciendis expedita."
+        },
+        {
+            "titulo": "Linux",
+            "anios": "2007",
+            "descripcion": "Linux básico y avanzado"
+        },
+        {
+            "titulo": "Desarrollador web stack junior",
+            "anios": "1978 - 1983",
+            "descripcion": "Certificacion de desarrollo web"
+        }
+    ],
+    "desarrollos": [
+        {
+            "titulo": "un desarrollo",
+            "descripcion": "Acá va una descripción del desarrollo",
+            "tecnologia": "tecnologías usadas"
+        },
+        {
+            "titulo": "un desarrollo",
+            "descripcion": "Acá va una descripción del desarrollo",
+            "tecnologia": "tecnologías usadas"
+        },
+        {
+            "titulo": "un desarrollo",
+            "descripcion": "Acá va una descripción del desarrollo",
+            "tecnologia": "tecnologías usadas"
+        },
+        {
+            "titulo": "un desarrollo",
+            "descripcion": "Acá va una descripción del desarrollo",
+            "tecnologia": "tecnologías usadas"
+        },
+        {
+            "titulo": "un desarrollo",
+            "descripcion": "Acá va una descripción del desarrollo",
+            "tecnologia": "tecnologías usadas"
+        },
+        {
+            "titulo": "un desarrollo",
+            "descripcion": "Acá va una descripción del desarrollo",
+            "tecnologia": "tecnologías usadas"
+        }
+    ]
+}

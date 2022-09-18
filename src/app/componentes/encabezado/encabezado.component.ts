@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-
+import { GetdatosService } from 'src/app/servicios/porfolio.service';
 
 @Component({
   selector: 'app-encabezado',
@@ -7,7 +7,10 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./encabezado.component.css']
 })
 export class EncabezadoComponent implements OnInit {
- 
+
+  constructor(private datosPorfolio: GetdatosService) { }
+  
+
   ngOnInit(): void {
    
   }

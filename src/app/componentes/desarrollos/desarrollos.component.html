@@ -1,94 +1,31 @@
-<section class="desar mt-4">
+<section class="desar">
     <div class="container caja">
         <div class="row justify-content-around">
             <div class="col-9 tit">
                 <H4>Desarrollos</H4>
             </div>
             <div class="col-3 align-self-center text-end crud">
-                <a href="#"><i class="bi bi-plus-square"></i></a>
+                <a (click)="agregarElemento()"><i class="bi bi-plus-square"></i></a>
             </div>
-        </div>            
-        <div class="row justify-content-around">
-              <!----------------un desarrollo------------------>
-              <div class="col-10 col-sm-7 col-md-5 col-xl-4 post">
-                <div class="contenedor">
-                    <div class="thumber">
-                        <a href="#"><img src="img/ex1.jpg" alt="" width="100%"></a>
+        </div>
+        <div class="cajaTodos">
+            <!----------------un desarrollo------------------>
+            <li *ngFor="let undesa of misDesa; let indice=index">
+                <div class="UnItem">
+                    <div class="foto">
+                        <a href="#"><img src="./assets/Img/ex1.jpg" alt="" width="100%"></a>
                     </div>
                     <div class="info">
-                        <h2 class="titulo"><a href="#">Titulo del proyecto</a></h2>
-                        <p class="extracto">Descripción del proyecto junto con las tecnologias usadas</p>
-                        <div class="col-3 align-self-center text-end crud2">
-                            <a href="#"><i class="bi bi-pencil"></i></a>
-                            <a href="#"><i class="bi bi-trash3"></i></a>
-                        </div>>
+                        <p class="tituloDesa"><a href="#">{{undesa.titulo}}</a></p>
+                        <p class="descripDesa">{{undesa.descripcion}}</p>
+                        <p class="tecnoDesa">{{undesa.tecnologia}}</p>
+                        <div class="crud2">
+                            <a (click)="mostrarElemento(indice)"><i class="bi bi-pencil"></i></a>
+                            <a (click)="borrarElemento(indice)"><i class="bi bi-trash3"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-             <!----------------un desarrollo------------------>
-             <div class="col-10 col-sm-7 col-md-5 col-xl-4 post">
-                <div class="contenedor">
-                    <div class="thumber">
-                        <a href="#"><img src="img/ex1.jpg" alt="" width="100%"></a>
-                    </div>
-                    <div class="info">
-                        <h2 class="titulo"><a href="#">Titulo del proyecto</a></h2>
-                        <p class="extracto">Descripción del proyecto junto con las tecnologias usadas</p>
-                        <div class="col-3 align-self-center text-end crud2">
-                            <a href="#"><i class="bi bi-pencil"></i></a>
-                            <a href="#"><i class="bi bi-trash3"></i></a>
-                        </div>>
-                    </div>
-                </div>
-            </div>
-              <!----------------un desarrollo------------------>
-            <div class="col-10 col-sm-7 col-md-5 col-xl-4 post">
-                <div class="contenedor">
-                    <div class="thumber">
-                        <a href="#"><img src="img/ex1.jpg" alt="" width="100%"></a>
-                    </div>
-                    <div class="info">
-                        <h2 class="titulo"><a href="#">Titulo del proyecto</a></h2>
-                        <p class="extracto">Descripción del proyecto junto con las tecnologias usadas</p>
-                        <div class="col-3 align-self-center text-end crud2">
-                            <a href="#"><i class="bi bi-pencil"></i></a>
-                            <a href="#"><i class="bi bi-trash3"></i></a>
-                        </div>>
-                    </div>
-                </div>
-            </div>
-              <!----------------un desarrollo------------------>
-              <div class="col-10 col-sm-7 col-md-5 col-xl-4 post">
-                <div class="contenedor">
-                    <div class="thumber">
-                        <a href="#"><img src="img/ex1.jpg" alt="" width="100%"></a>
-                    </div>
-                    <div class="info">
-                        <h2 class="titulo"><a href="#">Titulo del proyecto</a></h2>
-                        <p class="extracto">Descripción del proyecto junto con las tecnologias usadas</p>
-                        <div class="col-3 align-self-center text-end crud2">
-                            <a href="#"><i class="bi bi-pencil"></i></a>
-                            <a href="#"><i class="bi bi-trash3"></i></a>
-                        </div>>
-                    </div>
-                </div>
-            </div>
-              <!----------------un desarrollo------------------>
-              <div class="col-10 col-sm-7 col-md-5 col-xl-4 post">
-                <div class="contenedor">
-                    <div class="thumber">
-                        <a href="#"><img src="img/ex1.jpg" alt="" width="100%"></a>
-                    </div>
-                    <div class="info">
-                        <h2 class="titulo"><a href="#">Titulo del proyecto</a></h2>
-                        <p class="extracto">Descripción del proyecto junto con las tecnologias usadas</p>
-                        <div class="col-3 align-self-center text-end crud2">
-                            <a href="#"><i class="bi bi-pencil"></i></a>
-                            <a href="#"><i class="bi bi-trash3"></i></a>
-                        </div>>
-                    </div>
-                </div>
-            </div>
+            </li>
         </div>
     </div>
 </section>

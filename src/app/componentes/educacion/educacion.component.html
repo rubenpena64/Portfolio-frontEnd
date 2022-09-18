@@ -1,45 +1,29 @@
-<section class="expe mt-4">
-    <section class="educa mt-4">
+
+    <section class="educa">
         <div class="container caja">
             <div class="row">
                 <div class="col-11 tit">
                     <H4>Educación</H4>
                 </div>
+
                 <div class="col-1 align-self-center text-center crud">
-                    <a href="#"><i class="bi bi-plus-square"></i></a>
+                    <a (click)="agregarElemento()"><i class="bi bi-plus-square"></i></a>
                 </div>
-    
-                <div class="col-9">
-                    <p class="h5 mt-3">Texto editable</p>
-                    <p class="h6">1900-1900</p>
-                    <p class="descrip">Texto que se editará dinámicamente</p>
-                </div>
-                <div class="col-3 align-self-center text-end crud">
-                    <a href="#"><i class="bi bi-pencil"></i></a>
-                    <a href="#"><i class="bi bi-trash3"></i></a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-9">
-                    <p class="h5 mt-3">Texto editable</p>
-                    <p class="h6">1900-1900</p>
-                    <p class="descrip">Texto que se editará dinámicamente</p>
-                </div>
-                <div class="col-3 align-self-center text-end crud">
-                    <a href="#"><i class="bi bi-pencil"></i></a>
-                    <a href="#"><i class="bi bi-trash3"></i></a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-9">
-                    <p class="h5 mt-3">Texto editable</p>
-                    <p class="h6">1900-1900</p>
-                    <p class="descrip">Texto que se editará dinámicamente</p>
-                </div>
-                <div class="col-3 align-self-center text-end crud">
-                    <a href="#"><i class="bi bi-pencil"></i></a>
-                    <a href="#"><i class="bi bi-trash3"></i></a>
-                </div>
+                <li *ngFor="let educacion of mieducacion; let indice=index">
+                    <div class="row">
+                        <div class="col-9">
+                            <p class="h5 mt-3">{{educacion.titulo}}</p>
+                            <p class="h6">{{educacion.anios}}</p>
+                            <p class="descrip">{{educacion.descripcion}}</p>
+                            <hr>
+                        </div>
+                        <div class="col-3 align-self-center text-end crud" >
+                            <a (click)="mostrarIndice(indice)"><i class="bi bi-pencil"></i></a>
+                            <a (click)="borrarElemento(indice)"><i class="bi bi-trash3"></i></a>
+                        </div>
+                    </div>
+                </li>
             </div>
         </div>
     </section>
+    <!--*ngIf="datosPorfolio.estaLogeado"-->

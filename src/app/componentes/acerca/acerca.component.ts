@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { GetdatosService } from 'src/app/servicios/porfolio.service';
+
 
 @Component({
   selector: 'app-acerca',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcercaComponent implements OnInit {
 
-  constructor() { }
+  quiensoy: string = "";
+  lugar: string = "";
+  otros: string = "";
+
+  constructor(public datosPorfolio: GetdatosService) { }
+
 
   ngOnInit(): void {
-  }
+    this.datosPorfolio.obtenerDatos().subscribe(data => {
 
+      this.quiensoy = data.acerca.quiensoy;
+      this.lugar = data.acerca.lugar;
+      this.otros = data.acerca.Otros;
+    });
+  }
 }

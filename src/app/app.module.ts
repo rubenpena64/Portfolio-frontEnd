@@ -8,7 +8,10 @@ import { ExperienciaComponent } from './componentes/experiencia/experiencia.comp
 import { EducacionComponent } from './componentes/educacion/educacion.component';
 import { SkillsComponent } from './componentes/skills/skills.component';
 import { DesarrollosComponent } from './componentes/desarrollos/desarrollos.component';
-import {HttpClientModule} from '@angular/common/http'
+import { HttpClientModule} from '@angular/common/http';
+import { LoginFormComponent } from './componentes/login-form/login-form.component';
+import { TripleTxFormComponent } from './componentes/triple-tx-form/triple-tx-form.component'
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,11 +20,14 @@ import {HttpClientModule} from '@angular/common/http'
     ExperienciaComponent,
     EducacionComponent,
     SkillsComponent,
-    DesarrollosComponent
+    DesarrollosComponent,
+    LoginFormComponent,
+    TripleTxFormComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

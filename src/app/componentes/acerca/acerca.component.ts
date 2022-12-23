@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { persona } from 'src/app/model/persona';
+import { PersonaService } from 'src/app/servicios/persona.service';
 import { GetdatosService } from 'src/app/servicios/porfolio.service';
 
 
@@ -9,13 +11,15 @@ import { GetdatosService } from 'src/app/servicios/porfolio.service';
 })
 export class AcercaComponent implements OnInit {
 
+  misDatos: persona = new persona("","","");
+
   quiensoy: string = "";
   lugar: string = "";
   otros: string = "";
 
-  constructor(public datosPorfolio: GetdatosService) { }
-
-
+ // constructor(public datosPorfolio: GetdatosService) { }
+ constructor(public perServ: PersonaService) { }
+/*
   ngOnInit(): void {
     this.datosPorfolio.obtenerDatos().subscribe(data => {
 
@@ -24,4 +28,10 @@ export class AcercaComponent implements OnInit {
       this.otros = data.acerca.Otros;
     });
   }
+  */
+  ngOnInit(): void {
+    this.perServ.getPersona().subscribe(data =>(this.misDatos = data));
+    console.debug(this.misDatos.nombre);
+  }
+
 }

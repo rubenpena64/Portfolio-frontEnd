@@ -9,9 +9,16 @@ import { EducacionComponent } from './componentes/educacion/educacion.component'
 import { SkillsComponent } from './componentes/skills/skills.component';
 import { DesarrollosComponent } from './componentes/desarrollos/desarrollos.component';
 import { HttpClientModule} from '@angular/common/http';
-import { LoginFormComponent } from './componentes/login-form/login-form.component';
 import { TripleTxFormComponent } from './componentes/triple-tx-form/triple-tx-form.component'
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './componentes/login/login.component';
+import { InicioComponent } from './componentes/inicio/inicio.component';
+
+const appRoutes: Routes = [
+  {path: '',component: InicioComponent},
+  {path: 'login', component: LoginComponent}]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,14 +27,16 @@ import { FormsModule } from '@angular/forms';
     ExperienciaComponent,
     EducacionComponent,
     SkillsComponent,
-    DesarrollosComponent,
-    LoginFormComponent,
-    TripleTxFormComponent
+    DesarrollosComponent,   
+    TripleTxFormComponent,
+    InicioComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot (appRoutes, {enableTracing:true})
   ],
   providers: [],
   bootstrap: [AppComponent]

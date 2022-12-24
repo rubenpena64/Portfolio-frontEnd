@@ -4,7 +4,7 @@
             <div class="col-9 tit">
                 <H4>Hard and soft skills</H4>
             </div>
-            <div class="col-3 align-self-center text-end crud">
+            <div class="col-3 align-self-center text-end crud" *ngIf="verBt">
                 <a (click)="agregarElemento()"><i class="bi bi-plus-square"></i></a>
             </div>
         </div>
@@ -27,7 +27,7 @@
                             </defs>
                             <circle class="circulos" cx="80" cy="80" r="70" stroke-linecap="round" [ngStyle]="{'strokeDashoffset': nivel.largoBarra}" />
                         </svg>
-                        <div class="crud">
+                        <div class="crud" *ngIf="verBt">
                             <a (click)="mostrarElemento(indice)"><i class="bi bi-pencil"></i></a>
                             <a (click)="borrarElemento(indice)"><i class="bi bi-trash3"></i></a>
                         </div>

@@ -6,7 +6,7 @@
                     <H4>Educación</H4>
                 </div>
              
-                <div class="col-1 align-self-center text-center crud">
+                <div class="col-1 align-self-center text-center crud" *ngIf="verBt">
                     <a (click)="agregarElemento()"><i class="bi bi-plus-square"></i></a>
                 </div>
                 <app-triple-tx-form *ngIf="addFormu" (resultadoEvent)="editItemFin($event)" [textos]="textosEditar"></app-triple-tx-form>   
@@ -19,7 +19,7 @@
                             <p class="descrip">{{educacion.descripcion}}</p>
                             <hr>
                         </div>
-                        <div class="col-3 align-self-center text-end crud" >
+                        <div class="col-3 align-self-center text-end crud" *ngIf="verBt"   >
                             <a (click)="editarElemento(indice)"><i class="bi bi-pencil"></i></a>
                             <a (click)="borrarElemento(indice)"><i class="bi bi-trash3"></i></a>
                         </div>                       
@@ -32,4 +32,3 @@
         </div>
       
     </section>
-    <!--*ngIf="datosPorfolio.estaLogeado"-->

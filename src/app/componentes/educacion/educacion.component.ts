@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
-import { from } from 'rxjs';
+import { from, Subscription } from 'rxjs';
 import { tripleTexto } from 'src/app/clasesEntradas';
+import { BtServiceService } from 'src/app/servicios/bt-service.service';
 import { GetdatosService } from 'src/app/servicios/porfolio.service';
 
 
@@ -11,25 +12,28 @@ import { GetdatosService } from 'src/app/servicios/porfolio.service';
 })
 export class EducacionComponent implements OnInit {
   public mieducacion: Array<{ titulo: string; anios: string; descripcion: string }> = [];
+
   addFormu: boolean = false;
   editFormu: boolean = false;
+  verBt: boolean = false;
   indiceEdit: number = 0;
   textosEditar!: tripleTexto;
-  constructor(public datosPorfolio: GetdatosService) {
 
+  constructor(public datosPorfolio: GetdatosService,private btServ: BtServiceService) {
+   this.verBt=btServ.btVisibles();
   }
 
   ngOnInit(): void {
     this.datosPorfolio.obtenerDatos().subscribe(data => {
       this.mieducacion = data.educacion;
-    });
+     });
   }
   editarElemento(indi: number): void {
 
     this.indiceEdit = indi;
     this.textosEditar = new tripleTexto(this.mieducacion[indi].titulo, this.mieducacion[indi].anios, this.mieducacion[indi].descripcion, "Modificar");
     this.textosEditar.Resultado = "";
-    this.editFormu = true;
+    this.editFormu = false;
   }
   editItemFin(result: tripleTexto) {
     if (result.Resultado != "Cancel") {

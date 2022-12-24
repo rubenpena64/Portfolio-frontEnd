@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { BtServiceService } from 'src/app/servicios/bt-service.service';
 import { GetdatosService } from 'src/app/servicios/porfolio.service';
 
 @Component({
@@ -10,9 +11,11 @@ export class SkillsComponent implements OnInit {
 
 
   public skillsLista: Array<{ nombre: string; valor: number; largoBarra :number }> = [];
+  verBt: boolean = false;
 
-
-   constructor(public datosPorfolio: GetdatosService) { }
+   constructor(public datosPorfolio: GetdatosService,private btServ: BtServiceService) {
+    this.verBt=btServ.btVisibles();
+  }
 
  ngOnInit(): void {
     this.datosPorfolio.obtenerDatos().subscribe(data => {

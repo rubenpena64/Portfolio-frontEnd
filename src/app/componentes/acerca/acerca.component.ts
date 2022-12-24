@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { persona } from 'src/app/model/persona';
-import { PersonaService } from 'src/app/servicios/persona.service';
+import { BtServiceService } from 'src/app/servicios/bt-service.service';
+import { PersonaService } from 'src/app/servicios/http/persona.service';
 import { GetdatosService } from 'src/app/servicios/porfolio.service';
 
 
@@ -12,26 +13,17 @@ import { GetdatosService } from 'src/app/servicios/porfolio.service';
 export class AcercaComponent implements OnInit {
 
   misDatos: persona = new persona("","","");
-
   quiensoy: string = "";
   lugar: string = "";
   otros: string = "";
+  verBt: boolean = false;
 
- // constructor(public datosPorfolio: GetdatosService) { }
- constructor(public perServ: PersonaService) { }
-/*
-  ngOnInit(): void {
-    this.datosPorfolio.obtenerDatos().subscribe(data => {
-
-      this.quiensoy = data.acerca.quiensoy;
-      this.lugar = data.acerca.lugar;
-      this.otros = data.acerca.Otros;
-    });
-  }
-  */
+ constructor(public perServ: PersonaService, private btServ: BtServiceService) {
+  this.verBt=btServ.btVisibles();
+ }
   ngOnInit(): void {
     this.perServ.getPersona().subscribe(data =>(this.misDatos = data));
-    console.debug(this.misDatos.nombre);
+    
   }
 
 }

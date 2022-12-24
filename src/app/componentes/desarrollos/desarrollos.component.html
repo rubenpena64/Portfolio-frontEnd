@@ -4,7 +4,7 @@
             <div class="col-9 tit">
                 <H4>Desarrollos</H4>
             </div>
-            <div class="col-3 align-self-center text-end crud">
+            <div class="col-3 align-self-center text-end crud" *ngIf="verBt">
                 <a (click)="agregarElemento()"><i class="bi bi-plus-square"></i></a>
             </div>
         </div>
@@ -16,13 +16,14 @@
                         <a href="#"><img src="./assets/Img/ex1.jpg" alt="" width="100%"></a>
                     </div>
                     <div class="info">
-                        <p class="tituloDesa"><a href="#">{{undesa.titulo}}</a></p>
-                        <p class="descripDesa">{{undesa.descripcion}}</p>
-                        <p class="tecnoDesa">{{undesa.tecnologia}}</p>
-                        <div class="crud2">
+                        <div class="crud2" *ngIf="verBt">
                             <a (click)="mostrarElemento(indice)"><i class="bi bi-pencil"></i></a>
                             <a (click)="borrarElemento(indice)"><i class="bi bi-trash3"></i></a>
                         </div>
+                        <p class="tituloDesa"><a href="#">{{undesa.titulo}}</a></p>
+                        <p class="descripDesa">{{undesa.descripcion}}</p>
+                       
+                        
                     </div>
                 </div>
             </li>

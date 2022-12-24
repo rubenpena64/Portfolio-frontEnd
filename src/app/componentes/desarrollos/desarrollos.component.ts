@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { BtServiceService } from 'src/app/servicios/bt-service.service';
 import { GetdatosService } from 'src/app/servicios/porfolio.service';
 
 @Component({
@@ -9,9 +10,11 @@ import { GetdatosService } from 'src/app/servicios/porfolio.service';
 export class DesarrollosComponent implements OnInit {
 
   public misDesa: Array<{ titulo: string; descripcion: string; tecnologia :string }> = [];
+  verBt: boolean = false;
 
-  constructor(public datosPorfolio: GetdatosService) { }
-
+  constructor(public datosPorfolio: GetdatosService,private btServ: BtServiceService) {
+   this.verBt=btServ.btVisibles();
+  }
   ngOnInit(): void {
     this.datosPorfolio.obtenerDatos().subscribe(data => {
       this.misDesa = data.desarrollos;

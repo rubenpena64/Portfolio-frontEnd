@@ -4,18 +4,22 @@
             <div class="col-9 tit">
                 <H4>Hard and soft skills</H4>
             </div>
-            <div class="col-3 align-self-center text-end crud" *ngIf="verBt">
+            <div class="col-1 align-self-center text-center crud" *ngIf="verBt"  >
                 <a (click)="agregarElemento()"><i class="bi bi-plus-square"></i></a>
             </div>
         </div>
+        <app-doble-tx-form *ngIf="addFormu" (resultadoEvent)="editItemFin($event)" [textos]="textosEditar"></app-doble-tx-form>   
+        
         <div class="cajaSkill">
-            <div *ngFor="let nivel of skillsLista; let indice = index">
+            <div *ngFor="let ski of misSkills; let indice = index">
+              
                 <div class="miCaja">
+                  
                     <div class="unskill mt-4">
 
                         <div class="outer">
                             <div class="inner">
-                               <div class="skill"><span class="nivel">{{nivel.valor}}</span>%<br>{{ nivel.nombre }}</div>
+                               <div class="skill"><span class="nivel">{{ski.nivel}}</span>%<br>{{ ski.habilidad }}</div>
                             </div>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
@@ -25,14 +29,15 @@
                                     <stop offset="100%" stop-color="#673ab7" />
                                 </linearGradient>
                             </defs>
-                            <circle class="circulos" cx="80" cy="80" r="70" stroke-linecap="round" [ngStyle]="{'strokeDashoffset': nivel.largoBarra}" />
+                            <circle class="circulos" cx="80" cy="80" r="70" stroke-linecap="round" [ngStyle]="{'strokeDashoffset': ski.largoBarra}" />
                         </svg>
                         <div class="crud" *ngIf="verBt">
-                            <a (click)="mostrarElemento(indice)"><i class="bi bi-pencil"></i></a>
+                            <a (click)="editarElemento(indice)"><i class="bi bi-pencil"></i></a>
                             <a (click)="borrarElemento(indice)"><i class="bi bi-trash3"></i></a>
                         </div>
                     </div>
                 </div>
+                <app-doble-tx-form *ngIf="editFormu && indiceEdit==indice" (resultadoEvent)="editItemFin($event)" [textos]="textosEditar"></app-doble-tx-form>  
             </div>
         </div>
     </div>

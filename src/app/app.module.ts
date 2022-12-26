@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './componentes/login/login.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
+import { DobleTxFormComponent } from './componentes/doble-tx-form/doble-tx-form.component';
 
 const appRoutes: Routes = [
   {path: '',component: InicioComponent},
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
     DesarrollosComponent,   
     TripleTxFormComponent,
     InicioComponent,
-    LoginComponent
+    LoginComponent,
+    DobleTxFormComponent
   ],
   imports: [
     BrowserModule,

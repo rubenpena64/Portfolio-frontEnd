@@ -8,5 +8,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Ramas
 
 La rama main contiene todo el desarrollo del front end estático
+
 La rama Front dinámico contiene todo el desarrollo del front end dinámico
 

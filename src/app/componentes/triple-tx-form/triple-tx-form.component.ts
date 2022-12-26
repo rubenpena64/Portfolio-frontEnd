@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { tripleTexto } from 'src/app/clasesEntradas';
+import { tripleTexto } from 'src/app/model/clasesEntradas';
 
 
 @Component({

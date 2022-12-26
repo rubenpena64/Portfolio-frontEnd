@@ -8,16 +8,18 @@
             <div class="col-1 align-self-center text-center crud" *ngIf="verBt"  >
                 <a (click)="agregarElemento()"><i class="bi bi-plus-square"></i></a>
             </div>
+            <app-triple-tx-form *ngIf="addFormu" (resultadoEvent)="editItemFin($event)" [textos]="textosEditar"></app-triple-tx-form>   
             <li *ngFor="let experiencia of miExperiencia; let indice=index">
                 <div class="row">
+                    <app-triple-tx-form *ngIf="editFormu && indiceEdit==indice" (resultadoEvent)="editItemFin($event)" [textos]="textosEditar"></app-triple-tx-form>    
                     <div class="col-9">
                         <p class="h5 mt-3">{{experiencia.empresa}}</p>
                         <p class="h6">{{experiencia.anios}}</p>
-                        <p class="descrip">{{experiencia.puesto}}</p>
+                        <p class="descrip">{{experiencia.descrip}}</p>                        
                         <hr>
                     </div>
                     <div class="crud col-3 align-self-center text-end "*ngIf="verBt"  >
-                        <a (click)="mostrarElemento(indice)"><i class="bi bi-pencil"></i></a>
+                        <a (click)="editarElemento(indice)"><i class="bi bi-pencil"></i></a>
                         <a (click)="borrarElemento(indice)"><i class="bi bi-trash3"></i></a>
                     </div>
                 </div>
@@ -25,3 +27,5 @@
         </div>
     </div>
 </section>
+
+

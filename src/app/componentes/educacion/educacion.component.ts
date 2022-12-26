@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { from, Subscription } from 'rxjs';
-import { tripleTexto } from 'src/app/clasesEntradas';
+import { tripleTexto } from 'src/app/model/clasesEntradas';
 import { BtServiceService } from 'src/app/servicios/bt-service.service';
 import { GetdatosService } from 'src/app/servicios/porfolio.service';
 
@@ -29,11 +29,11 @@ export class EducacionComponent implements OnInit {
      });
   }
   editarElemento(indi: number): void {
-
+   
     this.indiceEdit = indi;
     this.textosEditar = new tripleTexto(this.mieducacion[indi].titulo, this.mieducacion[indi].anios, this.mieducacion[indi].descripcion, "Modificar");
     this.textosEditar.Resultado = "";
-    this.editFormu = false;
+    this.editFormu = true;
   }
   editItemFin(result: tripleTexto) {
     if (result.Resultado != "Cancel") {

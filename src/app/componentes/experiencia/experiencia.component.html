@@ -9,7 +9,7 @@
                 <a (click)="agregarElemento()"><i class="bi bi-plus-square"></i></a>
             </div>
             <app-triple-tx-form *ngIf="addFormu" (resultadoEvent)="editItemFin($event)" [textos]="textosEditar"></app-triple-tx-form>   
-            <li *ngFor="let experiencia of miExperiencia; let indice=index">
+            <li *ngFor="let experiencia of misExperiencias; let indice=index">
                 <div class="row">
                     <app-triple-tx-form *ngIf="editFormu && indiceEdit==indice" (resultadoEvent)="editItemFin($event)" [textos]="textosEditar"></app-triple-tx-form>    
                     <div class="col-9">

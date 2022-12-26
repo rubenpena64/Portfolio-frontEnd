@@ -15,7 +15,7 @@ import { ExperienciaService } from 'src/app/servicios/http/experiencia.service';
 
 export class ExperienciaComponent implements OnInit {
 
-  public miExperiencia: experiencia[] = [];
+  public misExperiencias: experiencia[] = [];
   addFormu: boolean = false;
   editFormu: boolean = false;
   verBt: boolean = false;
@@ -24,7 +24,7 @@ export class ExperienciaComponent implements OnInit {
   expeTemp: experiencia = new experiencia("","","" );
   idTemp?: number; // temporal para solucionar el tema de campo del tipo ?
 
-  constructor(public dexpe: ExperienciaService,private btServ: BtServiceService, private ruta: Router) {
+  constructor(public expeSer: ExperienciaService,private btServ: BtServiceService, private ruta: Router) {
    this.verBt=btServ.btVisibles();
   }
 
@@ -32,12 +32,12 @@ export class ExperienciaComponent implements OnInit {
     this.cargarTodo();
   }
   cargarTodo(){
-    this.dexpe.getTodas().subscribe(data => {this.miExperiencia = data;});
+    this.expeSer.getTodas().subscribe(data => {this.misExperiencias = data;});
   }
   editarElemento(indi: number): void {
    
     this.indiceEdit = indi;
-    this.textosEditar = new tripleTexto(this.miExperiencia[indi].empresa, this.miExperiencia[indi].anios, this.miExperiencia[indi].descrip, "Modificar");
+    this.textosEditar = new tripleTexto(this.misExperiencias[indi].empresa, this.misExperiencias[indi].anios, this.misExperiencias[indi].descrip, "Modificar");
     this.textosEditar.Resultado = "";
     this.editFormu = true;
     
@@ -52,10 +52,10 @@ export class ExperienciaComponent implements OnInit {
         if (this.editFormu) {
         ////// Lio para solucionar tema de variable tipo ?  /////////////
         let idSi: number=0;
-        this.idTemp=this.miExperiencia[this.indiceEdit].id;
+        this.idTemp=this.misExperiencias[this.indiceEdit].id;
         if(this.idTemp!=undefined){
         //////////////////////////////////////////////////////////         
-          this.dexpe.updateUna(this.idTemp,this.expeTemp).subscribe(data=>{
+          this.expeSer.updateUna(this.idTemp,this.expeTemp).subscribe(data=>{
             alert("La operación fue realizada exitosamente");
             this.cargarTodo();
           }
@@ -66,7 +66,7 @@ export class ExperienciaComponent implements OnInit {
         }        
       }
       else if (this.addFormu) {        
-        this.dexpe.saveUna(this.expeTemp).subscribe(data=>{
+        this.expeSer.saveUna(this.expeTemp).subscribe(data=>{
           alert("La operación fue realizada exitosamente");
           this.cargarTodo();          
         }
@@ -82,14 +82,14 @@ export class ExperienciaComponent implements OnInit {
   borrarElemento (indi: number): void{
     ////// Lio para solucionar tema de variable tipo ?  /////////////
     let idSi: number=0;
-    this.idTemp=this.miExperiencia[indi].id;
+    this.idTemp=this.misExperiencias[indi].id;
     if(this.idTemp!=undefined)
     //////////////////////////////////////////////////////////
         {
         idSi=this.idTemp;
-        if (confirm("La entrada de la empresa "+  this.miExperiencia[indi].empresa  + " se va a borrar definitivamente. ¿Está seguro?")) {
-          this.idTemp=this.miExperiencia[indi].id;
-          this.dexpe.borrarUna(idSi ).subscribe(data=>{
+        if (confirm("La entrada de la empresa "+  this.misExperiencias[indi].empresa  + " se va a borrar definitivamente. ¿Está seguro?")) {
+          this.idTemp=this.misExperiencias[indi].id;
+          this.expeSer.borrarUna(idSi ).subscribe(data=>{
             alert("La eliminación fue realizada exitosamente");
             this.cargarTodo();            
           }

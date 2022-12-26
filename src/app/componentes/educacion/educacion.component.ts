@@ -1,8 +1,11 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { from, Subscription } from 'rxjs';
 import { tripleTexto } from 'src/app/model/clasesEntradas';
+import { educacion } from 'src/app/model/educacion';
 import { BtServiceService } from 'src/app/servicios/bt-service.service';
-import { GetdatosService } from 'src/app/servicios/porfolio.service';
+import { EducacionService } from 'src/app/servicios/http/educacion.service';
+
 
 
 @Component({
@@ -11,49 +14,91 @@ import { GetdatosService } from 'src/app/servicios/porfolio.service';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent implements OnInit {
-  public mieducacion: Array<{ titulo: string; anios: string; descripcion: string }> = [];
-
+  public misEduca: educacion[] = [];
   addFormu: boolean = false;
   editFormu: boolean = false;
   verBt: boolean = false;
   indiceEdit: number = 0;
   textosEditar!: tripleTexto;
+  eduTemp: educacion = new educacion("","","" );
+  idTemp?: number; // temporal para solucionar el tema de campo del tipo ?
 
-  constructor(public datosPorfolio: GetdatosService,private btServ: BtServiceService) {
-   this.verBt=btServ.btVisibles();
+  constructor(public eduSer: EducacionService,private btServ: BtServiceService, private ruta: Router) {
+    this.verBt=btServ.btVisibles();
+   }
+
+   ngOnInit(): void {
+    this.cargarTodo();
+  }
+  cargarTodo(){
+    this.eduSer.getTodas().subscribe(data => {this.misEduca = data;});
   }
 
-  ngOnInit(): void {
-    this.datosPorfolio.obtenerDatos().subscribe(data => {
-      this.mieducacion = data.educacion;
-     });
-  }
   editarElemento(indi: number): void {
    
     this.indiceEdit = indi;
-    this.textosEditar = new tripleTexto(this.mieducacion[indi].titulo, this.mieducacion[indi].anios, this.mieducacion[indi].descripcion, "Modificar");
+    this.textosEditar = new tripleTexto(this.misEduca[indi].titulo, this.misEduca[indi].anios, this.misEduca[indi].descrip, "Modificar");
     this.textosEditar.Resultado = "";
     this.editFormu = true;
+    
   }
+  
   editItemFin(result: tripleTexto) {
-    if (result.Resultado != "Cancel") {
-      if (this.editFormu) {
-        this.mieducacion[this.indiceEdit].titulo = result.tx1;
-        this.mieducacion[this.indiceEdit].anios = result.tx2;
-        this.mieducacion[this.indiceEdit].descripcion = result.tx3;
+    if (result.Resultado != "Cancel")
+     {     
+        this.eduTemp.titulo= result.tx1;
+        this.eduTemp.anios = result.tx2;
+        this.eduTemp.descrip = result.tx3; 
+        if (this.editFormu) {
+        ////// Lio para solucionar tema de variable tipo ?  /////////////
+        let idSi: number=0;
+        this.idTemp=this.misEduca[this.indiceEdit].id;
+        if(this.idTemp!=undefined){
+        //////////////////////////////////////////////////////////         
+          this.eduSer.updateUna(this.idTemp,this.eduTemp).subscribe(data=>{
+            alert("La operación fue realizada exitosamente");
+            this.cargarTodo();
+          }
+          ,err =>{
+            alert("Error al modificar");
+          
+          })   
+        }        
       }
-      else if (this.addFormu) {
-        this.mieducacion.unshift({ titulo: result.tx1, anios: result.tx2, descripcion: result.tx3 });
+      else if (this.addFormu) {        
+        this.eduSer.saveUna(this.eduTemp).subscribe(data=>{
+          alert("La operación fue realizada exitosamente");
+          this.cargarTodo();          
+        }
+        ,err =>{
+          alert("Mal");
+        })
+       
       }
     }
     this.editFormu = false;
     this.addFormu = false;
   }
 
-  borrarElemento(indi: number): void {
-    if (confirm("Esta entrada se va a borrar definitivamente. ¿Está seguro?")) {
-      this.mieducacion.splice(indi, 1);
-    }
+  borrarElemento (indi: number): void{
+    ////// Lio para solucionar tema de variable tipo ?  /////////////
+    let idSi: number=0;
+    this.idTemp=this.misEduca[indi].id;
+    if(this.idTemp!=undefined)
+    //////////////////////////////////////////////////////////
+        {
+        idSi=this.idTemp;
+        if (confirm("La entrada de título "+  this.misEduca[indi].titulo  + " se va a borrar definitivamente. ¿Está seguro?")) {
+          this.idTemp=this.misEduca[indi].id;
+          this.eduSer.borrarUna(idSi ).subscribe(data=>{
+            alert("La eliminación fue realizada exitosamente");
+            this.cargarTodo();            
+          }
+          ,err =>{
+            alert("Error al elininar");
+          })   
+        }
+      }
   }
   agregarElemento(): void {
     this.textosEditar = new tripleTexto("Titulo", "Años", "Descripción", "Añadir");

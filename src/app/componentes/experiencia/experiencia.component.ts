@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
-import { tripleTexto } from 'src/app/model/clasesEntradas';
-import { experiencia } from 'src/app/model/experiencia';
+import { TripleTexto } from 'src/app/model/clasesEntradas';
+import { Experiencia } from 'src/app/model/experiencia';
 import { BtServiceService } from 'src/app/servicios/bt-service.service';
 import { ExperienciaService } from 'src/app/servicios/http/experiencia.service';
 
@@ -15,13 +15,13 @@ import { ExperienciaService } from 'src/app/servicios/http/experiencia.service';
 
 export class ExperienciaComponent implements OnInit {
 
-  public misExperiencias: experiencia[] = [];
+  public misExperiencias: Experiencia[] = [];
   addFormu: boolean = false;
   editFormu: boolean = false;
   verBt: boolean = false;
   indiceEdit: number = 0;
-  textosEditar!: tripleTexto;
-  expeTemp: experiencia = new experiencia("","","" );
+  textosEditar!: TripleTexto;
+  expeTemp: Experiencia = new Experiencia("","","" );
   idTemp?: number; // temporal para solucionar el tema de campo del tipo ?
 
   constructor(public expeSer: ExperienciaService,private btServ: BtServiceService, private ruta: Router) {
@@ -37,13 +37,13 @@ export class ExperienciaComponent implements OnInit {
   editarElemento(indi: number): void {
    
     this.indiceEdit = indi;
-    this.textosEditar = new tripleTexto(this.misExperiencias[indi].empresa, this.misExperiencias[indi].anios, this.misExperiencias[indi].descrip, "Modificar");
+    this.textosEditar = new TripleTexto(this.misExperiencias[indi].empresa, this.misExperiencias[indi].anios, this.misExperiencias[indi].descrip, "Modificar");
     this.textosEditar.Resultado = "";
     this.editFormu = true;
     
   }
 
-  editItemFin(result: tripleTexto) {
+  editItemFin(result: TripleTexto) {
     if (result.Resultado != "Cancel")
      {     
         this.expeTemp.empresa= result.tx1;
@@ -101,7 +101,7 @@ export class ExperienciaComponent implements OnInit {
   }
 
   agregarElemento(): void{
-    this.textosEditar = new tripleTexto("Empresa", "Años", "Descripción de tareas", "Añadir");
+    this.textosEditar = new TripleTexto("Empresa", "Años", "Descripción de tareas", "Añadir");
     this.textosEditar.Resultado = "";
     this.addFormu = true;
   }

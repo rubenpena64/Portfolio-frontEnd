@@ -1,4 +1,4 @@
-export class tripleTexto{
+export class TripleTexto{
     tx1:string;
     tx2:string;
     tx3:string;

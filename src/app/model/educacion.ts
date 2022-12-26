@@ -1,4 +1,4 @@
-export class educacion{
+export class Educacion{
     id?:number;
     titulo: string;
     anios: string;

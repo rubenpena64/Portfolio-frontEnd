@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { persona } from 'src/app/model/persona';
+import { Persona } from 'src/app/model/persona';
 import { BtServiceService } from 'src/app/servicios/bt-service.service';
 import { PersonaService } from 'src/app/servicios/http/persona.service';
 import { GetdatosService } from 'src/app/servicios/porfolio.service';
@@ -12,7 +12,7 @@ import { GetdatosService } from 'src/app/servicios/porfolio.service';
 })
 export class AcercaComponent implements OnInit {
 
-  misDatos: persona = new persona("","","");
+  misDatos: Persona = new Persona("","","");
   quiensoy: string = "";
   lugar: string = "";
   otros: string = "";

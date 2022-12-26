@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { tripleTexto } from 'src/app/model/clasesEntradas';
+import { TripleTexto } from 'src/app/model/clasesEntradas';
 
 
 @Component({
@@ -8,8 +8,8 @@ import { tripleTexto } from 'src/app/model/clasesEntradas';
   styleUrls: ['./triple-tx-form.component.css']
 })
 export class TripleTxFormComponent implements OnInit {
-  @Input() textos!: tripleTexto;
-  @Output() resultadoEvent = new EventEmitter<tripleTexto>();
+  @Input() textos!: TripleTexto;
+  @Output() resultadoEvent = new EventEmitter<TripleTexto>();
 
 
 

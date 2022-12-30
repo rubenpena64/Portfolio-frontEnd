@@ -11,8 +11,9 @@
         <app-doble-tx-form *ngIf="addFormu" (resultadoEvent)="editItemFin($event)" [textos]="textosEditar"></app-doble-tx-form>   
         
         <div class="cajaSkill">
+            
             <div *ngFor="let ski of misSkills; let indice = index">
-              
+                <app-doble-tx-form *ngIf="editFormu && indiceEdit==indice" (resultadoEvent)="editItemFin($event)" [textos]="textosEditar"></app-doble-tx-form>  
                 <div class="miCaja">
                   
                     <div class="unskill mt-4">
@@ -37,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-                <app-doble-tx-form *ngIf="editFormu && indiceEdit==indice" (resultadoEvent)="editItemFin($event)" [textos]="textosEditar"></app-doble-tx-form>  
+              
             </div>
         </div>
     </div>

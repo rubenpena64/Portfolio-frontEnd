@@ -34,10 +34,12 @@ export class EducacionComponent implements OnInit {
   }
   cargarTodo(){
     this.eduSer.getTodas().subscribe(data => {this.misEduca = data;});
+    this.btServ.onCambioBotones().subscribe(data => this.verBt = data); 
+    this.verBt = this.btServ.getbotonesVisible();
   }
 
   editarElemento(indi: number): void {
-   
+    this.btServ.setBtNoVisibles();
     this.indiceEdit = indi;
     this.textosEditar = new TripleTexto(this.misEduca[indi].titulo, this.misEduca[indi].anios, this.misEduca[indi].descrip, "Modificar");
     this.textosEditar.Resultado = "";
@@ -80,6 +82,7 @@ export class EducacionComponent implements OnInit {
     }
     this.editFormu = false;
     this.addFormu = false;
+    this.btServ.setBtVisibles();
   }
 
   borrarElemento (indi: number): void{
@@ -106,7 +109,7 @@ export class EducacionComponent implements OnInit {
     this.textosEditar = new TripleTexto("Titulo", "Años", "Descripción", "Añadir");
     this.textosEditar.Resultado = "";
     this.addFormu = true;
-
+    this.btServ.setBtNoVisibles();
   }
 
 

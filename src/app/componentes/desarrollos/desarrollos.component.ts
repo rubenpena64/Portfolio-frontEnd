@@ -31,16 +31,17 @@ export class DesarrollosComponent implements OnInit {
   }
   // Se inicializa el componente
   cargarTodo(){
-    this.desaSer.getTodas().subscribe(data => {this.misDesa = data;});
-    this.btServ.onCambioBotones().subscribe(data => this.verBt = data); 
-    this.verBt = this.btServ.getbotonesVisible();
+    this.desaSer.getTodas().subscribe(data => {this.misDesa = data;}); // subcripcion al servicio http de datos
+    this.btServ.onCambioBotones().subscribe(data => this.verBt = data);  // subcripcion al servicio de visibilidad de botones
+    this.verBt = this.btServ.getbotonesVisible();   // Inicializacion de verBt
   }
 
- /*LLamada por el formulario para editar un elemento 
+ /*LLamada por el formulario para editar un elemento
+  se ocultan los botones
   se crea un nuevo desarrollo temporal y se rellena con el objeto de misDesa que se quiere editar
   se limpia el campo resultado y se hace visible el formulario en pantalla*/
   editarElemento(indi: number): void {   
-    this.btServ.setBtNoVisibles(); // se hacen invisibles los botones hasta que se termina de editar
+    this.btServ.setBtNoVisibles(); // se hacen invisibles los botones de la pagina hasta que se termina de editar
     this.indiceEdit = indi;
     this.textosEditar = new InDesarrollo(this.misDesa[indi].titulo, this.misDesa[indi].descrip, this.misDesa[indi].foto, this.misDesa[indi].link, "Modificar");
     this.textosEditar.Resultado = "";
@@ -88,7 +89,7 @@ export class DesarrollosComponent implements OnInit {
        
       }
     }
-    // En ambos casos se hace invisible el formulario
+    // En ambos casos se hace invisible el formulario y se vuelven a hacer visibles. los botones
     this.editFormu = false;
     this.addFormu = false;
     this.btServ.setBtVisibles(); // se hacen visibles los botones otra vez

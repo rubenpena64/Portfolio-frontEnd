@@ -24,99 +24,99 @@ export class SkillsComponent implements OnInit {
   verBt?: boolean;
   indiceEdit: number = 0;
   textosEditar!: DobleTexto;
-  skillTemp: Habilidad = new Habilidad("","");
+  skillTemp: Habilidad = new Habilidad("", "");
   idTemp?: number; // temporal para solucionar el tema de campo del tipo ?
 
-  constructor(public skillSer: HabilidadService,private btServ: BtServiceService, private ruta: Router) {
-   // this.verBt=btServ.getBotonesVisibles();
-   }
+  constructor(public skillSer: HabilidadService, private btServ: BtServiceService, private ruta: Router) {
+    // this.verBt=btServ.getBotonesVisibles();
+  }
 
-   
-   ngOnInit(): void {
+
+  ngOnInit(): void {
     this.cargarTodo();
   }
-  cargarTodo(){
-     
-    this.skillSer.getTodas().subscribe(data => {this.misSkills = data;
-  
-    /*Se recorre la lista, y se calcula y guarda en el  campo largoBarra*/
-    this.misSkills.forEach(element => {
-      element.largoBarra =this.calculaLargoBarra(parseInt(element.nivel));
-    })
-      
-    });  
-}
+  cargarTodo() {
+    this.skillSer.getTodas().subscribe(data => {
+      this.misSkills = data;
+      this.btServ.onCambioBotones().subscribe(data => this.verBt = data);
+      this.verBt = this.btServ.getbotonesVisible();
+      /*Se recorre la lista, y se calcula y guarda en el  campo largoBarra*/
+      this.misSkills.forEach(element => {
+        element.largoBarra = this.calculaLargoBarra(parseInt(element.nivel));
+      })
+
+    });
+  }
   editarElemento(indi: number): void {
-   console.log("Click");
+    this.btServ.setBtNoVisibles();
     this.indiceEdit = indi;
     this.textosEditar = new DobleTexto(this.misSkills[indi].habilidad, this.misSkills[indi].nivel, "Modificar");
     this.textosEditar.Resultado = "";
-    this.editFormu = true;    
+    this.editFormu = true;
   }
 
-calculaLargoBarra(valor:number){
-  return  472 - 435 * valor  /100; 
-}
+  calculaLargoBarra(valor: number) {
+    return 472 - 435 * valor / 100;
+  }
 
-editItemFin(result: DobleTexto) {
-  if (result.Resultado != "Cancel")
-   {     
-      this.skillTemp.habilidad= result.tx1;
+  editItemFin(result: DobleTexto) {
+    if (result.Resultado != "Cancel") {
+      this.skillTemp.habilidad = result.tx1;
       this.skillTemp.nivel = result.tx2;
-     
+
       if (this.editFormu) {
-      ////// Lio para solucionar tema de variable tipo ?  /////////////
-      let idSi: number=0;
-      this.idTemp=this.misSkills[this.indiceEdit].id;
-      if(this.idTemp!=undefined){
-      //////////////////////////////////////////////////////////         
-        this.skillSer.updateUna(this.idTemp,this.skillTemp).subscribe(data=>{
+        ////// Lio para solucionar tema de variable tipo ?  /////////////
+        let idSi: number = 0;
+        this.idTemp = this.misSkills[this.indiceEdit].id;
+        if (this.idTemp != undefined) {
+          //////////////////////////////////////////////////////////         
+          this.skillSer.updateUna(this.idTemp, this.skillTemp).subscribe(data => {
+            alert("La operación fue realizada exitosamente");
+            this.cargarTodo();
+          }
+            , err => {
+              alert("Error al modificar");
+            })
+        }
+      }
+      else if (this.addFormu) {
+        this.skillSer.saveUna(this.skillTemp).subscribe(data => {
           alert("La operación fue realizada exitosamente");
           this.cargarTodo();
         }
-        ,err =>{
-          alert("Error al modificar");        
-        })   
-      }        
-    }
-    else if (this.addFormu) {        
-      this.skillSer.saveUna(this.skillTemp).subscribe(data=>{
-        alert("La operación fue realizada exitosamente");
-        this.cargarTodo();          
+          , err => {
+            alert("Mal");
+          })
       }
-      ,err =>{
-        alert("Mal");
-      })     
+    }
+    this.editFormu = false;
+    this.addFormu = false;
+    this.btServ.setBtVisibles();
+  }
+  borrarElemento(indi: number): void {
+    ////// Lio para solucionar tema de variable tipo ?  /////////////
+    let idSi: number = 0;
+    this.idTemp = this.misSkills[indi].id;
+    if (this.idTemp != undefined)
+    //////////////////////////////////////////////////////////
+    {
+      idSi = this.idTemp;
+      if (confirm("La entrada de " + this.misSkills[indi].habilidad + " se va a borrar definitivamente. ¿Está seguro?")) {
+        this.idTemp = this.misSkills[indi].id;
+        this.skillSer.borrarUna(idSi).subscribe(data => {
+          alert("La eliminación fue realizada exitosamente");
+          this.cargarTodo();
+        }
+          , err => {
+            alert("Error al elininar");
+          })
+      }
     }
   }
-  this.editFormu = false;
-  this.addFormu = false;
-}
-borrarElemento (indi: number): void{
-  ////// Lio para solucionar tema de variable tipo ?  /////////////
-  let idSi: number=0;
-  this.idTemp=this.misSkills[indi].id;
-  if(this.idTemp!=undefined)
-  //////////////////////////////////////////////////////////
-      {
-      idSi=this.idTemp;
-      if (confirm("La entrada de "+  this.misSkills[indi].habilidad  + " se va a borrar definitivamente. ¿Está seguro?")) {
-        this.idTemp=this.misSkills[indi].id;
-        this.skillSer.borrarUna(idSi ).subscribe(data=>{
-          alert("La eliminación fue realizada exitosamente");
-          this.cargarTodo();            
-        }
-        ,err =>{
-          alert("Error al elininar");
-        })   
-      }
-    }
-}
-agregarElemento(): void{
-  this.textosEditar = new DobleTexto("", "", "Agregar");
-  this.textosEditar.Resultado = "";
-  this.addFormu = true;
-}
-
-
+  agregarElemento(): void {
+    this.textosEditar = new DobleTexto("", "", "Agregar");
+    this.textosEditar.Resultado = "";
+    this.addFormu = true;
+    this.btServ.setBtNoVisibles(); // se hacen invisibles los botones hasta que se termina de editar
+  }
 }

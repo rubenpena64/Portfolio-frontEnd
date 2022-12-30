@@ -35,9 +35,11 @@ export class ExperienciaComponent implements OnInit {
   }
   cargarTodo(){
     this.expeSer.getTodas().subscribe(data => {this.misExperiencias = data;});
+    this.btServ.onCambioBotones().subscribe(data => this.verBt = data);  
+    this.verBt = this.btServ.getbotonesVisible();  
   }
   editarElemento(indi: number): void {
-   
+    this.btServ.setBtNoVisibles();
     this.indiceEdit = indi;
     this.textosEditar = new TripleTexto(this.misExperiencias[indi].empresa, this.misExperiencias[indi].anios, this.misExperiencias[indi].descrip, "Modificar");
     this.textosEditar.Resultado = "";
@@ -80,6 +82,7 @@ export class ExperienciaComponent implements OnInit {
     }
     this.editFormu = false;
     this.addFormu = false;
+    this.btServ.setBtVisibles(); 
   }
   borrarElemento (indi: number): void{
     ////// Lio para solucionar tema de variable tipo ?  /////////////
@@ -103,6 +106,7 @@ export class ExperienciaComponent implements OnInit {
   }
 
   agregarElemento(): void{
+    this.btServ.setBtNoVisibles();
     this.textosEditar = new TripleTexto("Empresa", "Años", "Descripción de tareas", "Añadir");
     this.textosEditar.Resultado = "";
     this.addFormu = true;

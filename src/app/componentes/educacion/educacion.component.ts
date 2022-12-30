@@ -111,6 +111,4 @@ export class EducacionComponent implements OnInit {
     this.addFormu = true;
     this.btServ.setBtNoVisibles();
   }
-
-
 }

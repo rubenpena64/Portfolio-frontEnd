@@ -11,18 +11,24 @@ import { HabilidadService } from 'src/app/servicios/http/habilidad.service';
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css']
 })
+
+/* Todos los componentes funcionan de manera muy similar y solo varian la cantidad y tipo de campos.
+El detalle del funcionamiento esta en el componente desarrollos.component.ts 
+Este componente varía solo en que hay que calcular la circunferencia del gauge en calculaLargoBarra()
+Podría haberlo guardado en la BD pero preferí hacerlo recorriendo la lista al cargar la pagina */
+
 export class SkillsComponent implements OnInit {
   public misSkills: Habilidad[] = [];
   addFormu: boolean = false;
   editFormu: boolean = false;
-  verBt: boolean = false;
+  verBt?: boolean;
   indiceEdit: number = 0;
   textosEditar!: DobleTexto;
   skillTemp: Habilidad = new Habilidad("","");
   idTemp?: number; // temporal para solucionar el tema de campo del tipo ?
 
   constructor(public skillSer: HabilidadService,private btServ: BtServiceService, private ruta: Router) {
-    this.verBt=btServ.btVisibles();
+   // this.verBt=btServ.getBotonesVisibles();
    }
 
    
@@ -33,6 +39,7 @@ export class SkillsComponent implements OnInit {
      
     this.skillSer.getTodas().subscribe(data => {this.misSkills = data;
   
+    /*Se recorre la lista, y se calcula y guarda en el  campo largoBarra*/
     this.misSkills.forEach(element => {
       element.largoBarra =this.calculaLargoBarra(parseInt(element.nivel));
     })
@@ -106,39 +113,10 @@ borrarElemento (indi: number): void{
     }
 }
 agregarElemento(): void{
-  this.textosEditar = new DobleTexto("Habilidad", "Nivel", "Añadir");
+  this.textosEditar = new DobleTexto("", "", "Agregar");
   this.textosEditar.Resultado = "";
   this.addFormu = true;
 }
 
 
-
-
-/*
-ngOnInit(): void {
-  this.datosPorfolio.obtenerDatos().subscribe(data => {
-    this.skillsLista = data.skills;
-    
-   this.skillsLista.forEach(element => {
-   element.largoBarra =this.calculaLargoBarra(element.valor)
-   });       
-  });
-}
-*/
-
-
-/*
-  mostrarElemento(indi: number):void{   
-    alert ( "Total de entradas: " + this.skillsLista.length + "\n" +
-      this.skillsLista[indi].nombre + "\n" 
-    + this.skillsLista[indi].valor);
-  }
-
-  borrarElemento (indi: number): void{
-    this.skillsLista.splice(indi,1);
-  }
-  agregarElemento(): void{
-    this.skillsLista.unshift({ nombre:"Skill", valor:25, largoBarra: this.calculaLargoBarra(25)});
-  }
-  */
 }

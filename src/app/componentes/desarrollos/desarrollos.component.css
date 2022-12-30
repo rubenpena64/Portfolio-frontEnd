@@ -1,13 +1,73 @@
-.cajaTodos {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
+.caja .post {
+    margin-bottom: 1.875em;
 }
 
+.caja .post .contenedor {
+    background: rgba(221, 221, 238, 0.085);
+    box-shadow: 6px 10px 5px 0px rgba(0, 0, 0, 0.153);
+    margin: 20px;
+}   
+ .row .thumber {
+    margin: 20px;
+}
+.thumber img {
+    vertical-align: top;
+   /* height: auto; */
+   width: 220px;
+   height: 165px;
+    border-radius: 5px;
+}
+.post .contenedor .row .info {
+    padding: 1.25em;
+}
+.post .contenedor .row .titulo {
+    line-height: 1.125em;
+    margin-bottom: 1.25em;
+    font-size: 1.4em;
+}
+
+.post .contenedor .row .titulo a {
+    color: white;
+}
+
+.post .contenedor .row .info .extracto {
+    color: white;
+    font-size: 1em;
+    line-height: 1.75em;
+    margin-bottom: 1.25em;
+    overflow: hidden;
+}
+.crud a {
+    border-radius: 40%;
+    width: 2.5em;
+    height: 2.5em;
+    text-align: center;
+    line-height: 2.5em;
+    display: inline-block;
+    color: #fff;
+}
+
+.crud a:Hover {
+    background: #ddd;
+    color: #000;
+}
+/* Media queries proyectos */
+/*
+@media (max-width: 768px){
+    .caja .post .contenedor .contenedor-imagen-extracto{
+        flex-direction: column;
+    };
+    .caja .post .contenedor {
+        display: flex;
+        flex-direction: row;
+    }
+}
+*/
+
+/*
 .UnItem{
-    width: 350px;;
-    height: 500px;
+    width: 100%;
+    height: 250px;
     margin: 10px;    
     box-shadow: 0px 0px 15px 3px rgba(255, 255, 255, 0.7);
     margin: 20px;   
@@ -73,4 +133,4 @@
 .crud a:Hover {
     background: #ddd;
     color: #000;
-}
+}*/

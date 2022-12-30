@@ -8,17 +8,16 @@ import { TripleTexto } from 'src/app/model/clasesEntradas';
   styleUrls: ['./triple-tx-form.component.css']
 })
 export class TripleTxFormComponent implements OnInit {
+  /* Detalles de los campos en la declaracion (clasesEntradas)
+   En textos se reciben los datos vacios para agregar o completos para modificar
+   si se agregó o modificó se emite con el campo resultado= "Editado" o "Cancel" si se canceló */
   @Input() textos!: TripleTexto;
   @Output() resultadoEvent = new EventEmitter<TripleTexto>();
-
-
-
   constructor() { }
 
   ngOnInit(): void {
-
-
   }
+  
   emitirEditado() {
     if (this.validar()) {
       this.textos.Resultado = "Editado"

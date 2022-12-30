@@ -8,25 +8,33 @@
                 <a (click)="agregarElemento()"><i class="bi bi-plus-square"></i></a>
             </div>
         </div>
-        <div class="cajaTodos">
-            <!----------------un desarrollo------------------>
-            <li *ngFor="let undesa of misDesa; let indice=index">
-                <div class="UnItem">
-                    <div class="foto">
-                        <a href="#"><img src="./assets/Img/ex1.jpg" alt="" width="100%"></a>
-                    </div>
-                    <div class="info">
-                        <div class="crud2" *ngIf="verBt">
-                            <a (click)="mostrarElemento(indice)"><i class="bi bi-pencil"></i></a>
+        <app-desa-form *ngIf="addFormu" (resultadoEvent)="editItemFin($event)" [textos]="textosEditar"></app-desa-form>
+        <!----------------un desarrollo------------------>
+        <li *ngFor="let undesa of misDesa; let indice=index">
+            
+            <div class="post">
+                <div class="contenedor">
+                    <div class="row">
+                        <app-desa-form *ngIf="editFormu && indiceEdit==indice"
+                            (resultadoEvent)="editItemFin($event)" [textos]="textosEditar"></app-desa-form>
+                        <div class="thumber col-12 col-xl-3">
+                            <a><img src={{undesa.foto}} alt="Sin magen de {{undesa.titulo}}" /></a>
+                        </div>
+                        <div class="col-9 col-xl-6 info">
+                            <p class="h2 mt-3 titulo">           <!--  <p class="h2 mt-3 titulo">{{undesa.titulo}}</p> --> 
+                            <a href={{undesa.link}} target="_blank"> {{undesa.titulo}} </a>
+                            </p>
+                            <p class="extracto">{{undesa.descrip}}</p>
+                            
+                        </div>
+                        <div class="col-3 col-xl-2 align-self-center text-end crud" *ngIf="verBt">
+                            <a (click)="editarElemento(indice)"><i class="bi bi-pencil"></i></a>
                             <a (click)="borrarElemento(indice)"><i class="bi bi-trash3"></i></a>
                         </div>
-                        <p class="tituloDesa"><a href="#">{{undesa.titulo}}</a></p>
-                        <p class="descripDesa">{{undesa.descripcion}}</p>
-                       
-                        
                     </div>
+
                 </div>
-            </li>
-        </div>
+            </div>
+        </li>        
     </div>
 </section>

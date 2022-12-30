@@ -16,10 +16,10 @@ export class AcercaComponent implements OnInit {
   quiensoy: string = "";
   lugar: string = "";
   otros: string = "";
-  verBt: boolean = false;
+  verBt?: boolean ;
 
  constructor(public perServ: PersonaService, private btServ: BtServiceService) {
-  this.verBt=btServ.btVisibles();
+  //this.verBt=btServ.getBotonesVisibles();
  }
   ngOnInit(): void {
     this.perServ.getPersona().subscribe(data =>(this.misDatos = data));

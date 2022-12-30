@@ -13,6 +13,8 @@ import { ExperienciaService } from 'src/app/servicios/http/experiencia.service';
   styleUrls: ['./experiencia.component.css']
 })
 
+/* Todos los componentes funcionan de manera muy similar y solo varian la cantidad y tipo de campos.
+El detalle del funcionamiento esta en el componente desarrollos.component.ts */
 export class ExperienciaComponent implements OnInit {
 
   public misExperiencias: Experiencia[] = [];
@@ -25,7 +27,7 @@ export class ExperienciaComponent implements OnInit {
   idTemp?: number; // temporal para solucionar el tema de campo del tipo ?
 
   constructor(public expeSer: ExperienciaService,private btServ: BtServiceService, private ruta: Router) {
-   this.verBt=btServ.btVisibles();
+  // this.verBt=btServ.getBotonesVisibles();
   }
 
   ngOnInit(): void {

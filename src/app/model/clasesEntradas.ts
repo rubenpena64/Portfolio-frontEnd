@@ -1,4 +1,8 @@
+/*Clases usada para el envio de datos al formulario para agregar/modificar*/
+/*En txBt viaje el texto del boton (agregar o modificar) y en resultado vuelve si se canceló*/
+
 export class TripleTexto{
+    /* Usada para educacion y experiencia*/
     tx1:string;
     tx2:string;
     tx3:string;
@@ -14,6 +18,7 @@ export class TripleTexto{
 }
 
 export class DobleTexto{
+     /* Usada skills*/
     tx1:string;
     tx2:string;   
     txBt: string="";
@@ -24,4 +29,22 @@ export class DobleTexto{
         this.tx2=texto2;       
         this.txBt=textoBoton;
     }    
+}
+ export class InDesarrollo{
+     /* Usada para desarrollos*/
+        tit:string;
+        desc:string;   
+        link: string;
+        img: string
+        txBt: string="";
+        Resultado:string="";
+    
+        constructor(tit: string, desc: string, link: string, img:string, textoBoton:string){
+            this.tit=tit;
+            this.desc=desc;
+            this.link = link;
+            this.img = img;       
+            this.txBt=textoBoton;
+        }  
+    
 }

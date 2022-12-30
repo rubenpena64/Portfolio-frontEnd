@@ -1,12 +1,18 @@
 <form class="formu">
-    <div>        
-        <input type="text" name="texto1"  id="texto1" class="textEntry my-1"  [(ngModel)]="textos.tx1" placeholder="Debe ingresar un texto"/>
+    <div>
+
+        <input type="text" name="texto1" id="texto1" class="textEntry my-1" [(ngModel)]="textos.tx1"
+            placeholder="Obligatorio" />
+        <p>Habilidad </p>
     </div>
-    <div >        
-        <input type="text" name="texto2" id="texto2" class="textEntry  my-1" name="text"  [(ngModel)]="textos.tx2"placeholder="Debe ingresar un texto"/>
+    <div>
+
+        <input type="number" name="texto2" id="texto2" class="textEntry  my-1" name="text" [(ngModel)]="textos.tx2"
+            placeholder="Mayor a 0" />
+        <p>Nivel </p>
     </div>
-    <div  class="text-left">
-      <button type="button" class="btn btn-outline-light " (click)="emitirEditado()">{{textos.txBt}}</button>
-      <button type="button" class="btn btn-outline-light "   (click)="emitirCancel()">Cancelar</button>
+    <div class="text-left">
+        <button type="button" class="btn btn-outline-light " (click)="emitirEditado()">{{textos.txBt}}</button>
+        <button type="button" class="btn btn-outline-light " (click)="emitirCancel()">Cancelar</button>
     </div>
 </form>

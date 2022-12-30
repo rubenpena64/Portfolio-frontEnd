@@ -6,25 +6,27 @@ import { Educacion } from 'src/app/model/educacion';
 import { BtServiceService } from 'src/app/servicios/bt-service.service';
 import { EducacionService } from 'src/app/servicios/http/educacion.service';
 
-
-
 @Component({
   selector: 'app-educacion',
   templateUrl: './educacion.component.html',
   styleUrls: ['./educacion.component.css']
 })
+
+/* Todos los componentes funcionan de manera muy similar y solo varian la cantidad y tipo de campos.
+El detalle del funcionamiento esta en el componente desarrollos.component.ts */
+
 export class EducacionComponent implements OnInit {
   public misEduca: Educacion[] = [];
   addFormu: boolean = false;
   editFormu: boolean = false;
-  verBt: boolean = false;
+  verBt?: boolean;
   indiceEdit: number = 0;
   textosEditar!: TripleTexto;
   eduTemp: Educacion = new Educacion("","","" );
   idTemp?: number; // temporal para solucionar el tema de campo del tipo ?
 
   constructor(public eduSer: EducacionService,private btServ: BtServiceService, private ruta: Router) {
-    this.verBt=btServ.btVisibles();
+  //  this.verBt=btServ.getBotonesVisibles();
    }
 
    ngOnInit(): void {

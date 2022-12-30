@@ -9,14 +9,18 @@ import { BtServiceService } from 'src/app/servicios/bt-service.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  subs?: Subscription;
+
 
   constructor(private btServ: BtServiceService, private appRoute:Router) { }
-  subs!: Subscription;
+ 
   ngOnInit(): void {
   }
 
   logeo(){   
-    this.btServ.HabiliBotones();
-    this.appRoute.navigate([''])    
+   
+    this.appRoute.navigate([''])   
+    this.btServ.cambiarvisible();
+  
   }
 }

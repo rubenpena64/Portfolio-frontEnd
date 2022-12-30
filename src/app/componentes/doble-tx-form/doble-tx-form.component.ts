@@ -7,20 +7,22 @@ import { DobleTexto } from 'src/app/model/clasesEntradas';
   styleUrls: ['./doble-tx-form.component.css']
 })
 export class DobleTxFormComponent implements OnInit {
-  @Input() textos!: DobleTexto;
+/* Detalles de los campos en la declaracion (clasesEntradas)
+   En textos se reciben los datos vacios para agregar o completos para modificar
+   si se agregó o modificó se emite con el campo resultado= "Editado" o "Cancel" si se canceló */
+  @Input() textos!: DobleTexto;   
   @Output() resultadoEvent = new EventEmitter<DobleTexto>();
   
   constructor() { }
 
   ngOnInit(): void {
   }
+
   emitirEditado() {
-    if (this.validar()) {
+    if (this.validar()) {          
       this.textos.Resultado = "Editado"
       this.resultadoEvent.emit(this.textos);
-    } else {
-      alert("Los dos campos son obligatorios")
-    }   
+    } 
   }
   emitirCancel() {
     this.textos.Resultado = "Cancel"
@@ -30,7 +32,16 @@ export class DobleTxFormComponent implements OnInit {
   validar(): boolean {
 
     if ((this.textos.tx1 == "") || (this.textos.tx2 == ""))
+    {
+      alert("Los dos campos son obligatorios");
       return false;
+    }
+    else if(Number.isNaN(parseInt(this.textos.tx2, 10)))
+    {
+      
+      alert("El nivel debe ser mayor a cero");
+      return false;
+    }
     else
       return true;
   }

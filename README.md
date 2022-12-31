@@ -11,3 +11,9 @@ La rama Front dinámico contiene todo el desarrollo del front end dinámico
 
 ## Otras ramas
 Las otras ramas carecen de importancia, ya que se usaron de manera temporal durante el desarrollo
+
+#Funcionamiento general
+El proyecto contiene: un componente principal (inicio) dinde están cargados cada uno de los módulo, uncomponente que contiene la pantalla de logín.
+Cada uno de los componentes usan dos servicios: 
+  Su propio servicio con los datos que llegan de la BD 
+  Un servicio con los datos de visibilidad de los botones, segun está logeado o no

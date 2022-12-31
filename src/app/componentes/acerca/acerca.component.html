@@ -7,26 +7,30 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <H1 class="H2 text-white mt-3" style="--bs-text-opacity: .8">{{misDatos.nombre}} {{misDatos.apellido}}</H1>
+                      <h1 class="H2 text-white mt-3" style="--bs-text-opacity: 0.8">
+                        Ruben Peña
+                      </h1>
                     </div>
-                </div>
+                  </div>
                 <H4 class="H4 text-white mt-3" style="--bs-text-opacity: .8">Desarrollador web full stack Junior</H4>
             </div>
 
         </div>
-
+        <app-acerca-form *ngIf="editFormu" (resultadoEvent)="editFin($event)" [textos]="textosEditar"></app-acerca-form>  
         <div class="row mx-3">
-            <div class="col-9 text-light font-weight-bold">
-              
-                <p>{{ quiensoy }}</p>
-                <p>{{ lugar }}</p>
-                <p>{{ otros }}</p>
-              
-                
+            <div class="col-9 text-light font-weight-light">    
+                       
+                <p>{{ miAcerca.linea1 }}</p>
+                <p>{{ miAcerca.linea2 }}</p>
+                <p>{{miAcerca.linea3 }}</p>    
+                <!--
+                <p>Desarrollador de sistemas embebidos en AyL Integral Trade. También he dasarrolado software de pequeños escritorio para PC y telefonos móviles</p>
+                <p>Fotógrafo amateur</p>
+                <p>Radicado en General Pacheco, Buenos Aires</p>
+               -->
             </div>
-            <div class="col-3 align-self-center text-end crud" *ngIf="verBt">
-                <a href="#"><i class="bi bi-pencil"></i></a>
-                <a href="#"><i class="bi bi-trash3"></i></a>
+            <div class="col-3 align-self-center text-end crud" *ngIf="verBt"   >
+                <a (click)="editar()"><i class="bi bi-pencil"></i></a>           
             </div>
         </div>
     </div>

@@ -1,0 +1,22 @@
+<form class="formu">
+    <div>
+        <p>Acerca de mí
+            <textarea name="texto1" id="texto1" class="textEntry  my-1 col-12" rows="2"  maxlength="255"
+            [(ngModel)]="textos.tx1"></textarea>
+        </p>
+    </div> 
+    <div>
+        <p>Algunos datos personales
+            <textarea name="texto2" id="texto2" class="textEntry  my-1 col-12" rows="2" maxlength="255"
+            [(ngModel)]="textos.tx2"></textarea>
+        </p>
+    </div>
+    <div>
+        <p>Otros datos
+        <textarea name="texto3" id="texto3" class="textEntry  my-1 col-12" rows="2"  maxlength="255"
+        [(ngModel)]="textos.tx3"></textarea>
+    </div> 
+    
+    <button type="button" class="btn btn-outline-light col-5 col-md-2" (click)="emitirEditado()">{{textos.txBt}}</button>
+    <button type="button" class="btn btn-outline-light col-5 col-md-2 mx-3" (click)="emitirCancel()">Cancelar</button>
+</form>

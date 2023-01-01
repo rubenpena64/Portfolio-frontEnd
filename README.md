@@ -15,8 +15,9 @@ Las otras ramas carecen de importancia, ya que se usaron de manera temporal dura
 ## Funcionamiento general
 El proyecto contiene: un componente principal (inicio) donde están cargados cada uno de los módulos, un componente que contiene la pantalla de logín.
 Cada uno de los componentes usa dos servicios: 
-  Su propio servicio con los datos que llegan de la BD 
-  Un servicio que consumen todos los múdulos con los datos de visibilidad o no de los botones, segun está logeado o no.
+
+Su propio servicio con los datos que llegan de la BD 
+Un servicio que consumen todos los múdulos con los datos de visibilidad o no de los botones, segun está logeado o no.
   
 ## Funcionamiento de cada componente
 Todos los componentes funcionan de manera similar y solo varía la cantidad de campos. El funcionamiento de los componente está explicado en el código del componente desarrollo (desarrollos.component.ts)

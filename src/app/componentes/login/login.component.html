@@ -16,14 +16,15 @@
                 <br>                 
 
                   <div class="form-outline mb-4">
-                    <input type="email" id="form2Example11" class="form-control"/>
-              
-                    <label class="form-label" for="form2Example11">Usuario</label>
+                  
+                    <input type="text" name="texto1" id="texto1" class="form-control" name="text1"  [(ngModel)]="logi.nombre" />           
+                    <label class="form-label">Usuario</label>
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input type="password" id="form2Example22" class="form-control" />
-                    <label class="form-label" for="form2Example22">Contraseña</label>
+                  
+                    <input type="password" name="texto2" id="texto2" class="form-control" name="text2"  [(ngModel)]="logi.pass" />  
+                    <label class="form-label">Contraseña</label>
                   </div>
 
                   <div class="text-center pt-1 mb-5 pb-1">

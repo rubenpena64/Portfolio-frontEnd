@@ -9,14 +9,27 @@ import { BtServiceService } from 'src/app/servicios/bt-service.service';
   styleUrls: ['./encabezado.component.css']
 })
 export class EncabezadoComponent implements OnInit {
-
+  txBoton: string="";
+  Logueado!: boolean;
   constructor(private btService: BtServiceService, private appRoute:Router) { }
   
 
-  ngOnInit(): void {
-   
+  ngOnInit(): void {  
+    this.btService.onCambioTxLogin().subscribe(data => this.txBoton = data);
+    this.txBoton =this.btService.getTxLogin();
+    this.Logueado = this.btService.getbotonesVisible();
   }
   loguearse(){   
-   this.appRoute.navigate(['/login'])    
+   this.Logueado = this.btService.getbotonesVisible();
+   if(this.Logueado)
+      {
+        this.appRoute.navigate([''])   
+        this.btService.cambiarvisible();
+      }
+      else{
+        
+        this.appRoute.navigate(['/login'])   
+      }
+      
   }
 }

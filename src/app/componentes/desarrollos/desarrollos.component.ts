@@ -34,6 +34,7 @@ export class DesarrollosComponent implements OnInit {
     this.desaSer.getTodas().subscribe(data => {this.misDesa = data;}); // subcripcion al servicio http de datos
     this.btServ.onCambioBotones().subscribe(data => this.verBt = data);  // subcripcion al servicio de visibilidad de botones
     this.verBt = this.btServ.getbotonesVisible();   // Inicializacion de verBt
+    console.log(this.misDesa[0].titulo)
   }
 
  /*LLamada por el formulario para editar un elemento
@@ -43,7 +44,7 @@ export class DesarrollosComponent implements OnInit {
   editarElemento(indi: number): void {   
     this.btServ.setBtNoVisibles(); // se hacen invisibles los botones de la pagina hasta que se termina de editar
     this.indiceEdit = indi;
-    this.textosEditar = new InDesarrollo(this.misDesa[indi].titulo, this.misDesa[indi].descrip, this.misDesa[indi].foto, this.misDesa[indi].link, "Modificar");
+    this.textosEditar = new InDesarrollo(this.misDesa[indi].titulo, this.misDesa[indi].descrip, this.misDesa[indi].link, this.misDesa[indi].foto, "Modificar");
     this.textosEditar.Resultado = "";
    
     this.editFormu = true;    

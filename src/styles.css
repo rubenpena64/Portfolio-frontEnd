@@ -68,12 +68,12 @@ header .btn {
 .skills .caja,
 .desar .caja {
 
-    background: rgba(100, 100, 100, 0.2);
+    background: rgba(230, 81, 185, 0.1);
     border-radius: 15px;
     color: #aaa;
     margin-top: 50px;
     padding: 25px 50px;
-    box-shadow: 0px 0px 15px 15px rgba(60, 60, 60, 0.2);
+    box-shadow: 0px 0px 15px 15px rgba(157, 115, 182, 0.2);
 }
 
 
@@ -94,6 +94,7 @@ header .btn {
 .skills .caja .tit,
 .desar .caja .tit {
     padding: 10px;
+    color: rgb(157, 115, 182);
 }
 
 li {

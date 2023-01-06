@@ -9,6 +9,8 @@ export class BtServiceService {
 
   private btVisible!: boolean;
   private subjet = new Subject<boolean>();
+  private subdos = new Subject<string>();
+  private txLogin="Login";
   
   constructor() { }
 
@@ -28,11 +30,22 @@ export class BtServiceService {
  public cambiarvisible():void {
   this.btVisible = !this.btVisible;
   this.subjet.next(this.btVisible);
+  if (this.btVisible)
+        this.txLogin ="Logout";
+  else
+        this.txLogin ="Login";
+  this.subdos.next(this.txLogin);
  }
  public getbotonesVisible(): boolean{
   return this.btVisible;
  }
 
+ public getTxLogin(): string{
+  return this.txLogin;
+ }
+ public onCambioTxLogin(): Observable<string> {   
+  return this.subdos.asObservable();
+}
 
 
 }

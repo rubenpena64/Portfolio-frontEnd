@@ -1,11 +1,14 @@
 .caja .post {
     margin-bottom: 1.875em;
+    border-radius: 15px;
+
 }
 
 .caja .post .contenedor {
     background: rgba(221, 221, 238, 0.085);
     box-shadow: 6px 10px 5px 0px rgba(0, 0, 0, 0.153);
     margin: 20px;
+    border-radius: 15px;
 }   
  .row .thumber {
     margin: 20px;
@@ -27,7 +30,7 @@
 }
 
 .post .contenedor .row .titulo a {
-    color: white;
+    color: #bbb;
 }
 
 .post .contenedor .row .info .extracto {

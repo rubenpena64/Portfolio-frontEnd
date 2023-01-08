@@ -7,26 +7,26 @@ import { Desarrollo } from 'src/app/model/desarrollos';
   providedIn: 'root'
 })
 export class DesarrollosService {
-  locExpe = 'http://localhost:8080/proye/';
-
+  locDesa = 'https://wonderful-susanetta-rubenpena64.koyeb.app/proye/';
+  //locDesa='';
 
   constructor(private httpC: HttpClient) { }
 
   public getTodas(): Observable<Desarrollo[]> {
-    return this.httpC.get<Desarrollo[]>(this.locExpe + 'ver');
+    return this.httpC.get<Desarrollo[]>(this.locDesa + 'ver');
   }
 
   public saveUna(expe: Desarrollo): Observable<any> {
-    return this.httpC.post<any>(this.locExpe + 'crear', expe);
+    return this.httpC.post<any>(this.locDesa + 'crear', expe);
   }
 
 
   public updateUna(id: number, expe: Desarrollo): Observable<any> {
 
-    return this.httpC.put<any>(this.locExpe + `editar/${id}`, expe);
+    return this.httpC.put<any>(this.locDesa + `editar/${id}`, expe);
   }
 
   public borrarUna(id: number): Observable<any> {
-    return this.httpC.delete<any>(this.locExpe + `borrar/${id}`);
+    return this.httpC.delete<any>(this.locDesa + `borrar/${id}`);
   }
 }

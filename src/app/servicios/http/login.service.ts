@@ -8,8 +8,8 @@ import { LoginDat } from 'src/app/model/login';
 })
 export class LoginService {
 
-  locGral = 'http://localhost:8080/login/';
-
+  locGral = 'https://wonderful-susanetta-rubenpena64.koyeb.app/login/';
+  //locGral='';
   constructor(private http: HttpClient) { }
 
   public getLogin(logi: LoginDat): Observable<any> {

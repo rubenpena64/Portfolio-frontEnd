@@ -6,21 +6,30 @@ body {
     font-family: "Open Sans", Arial, Sans-serif;
 }
 
-/* ----- ----- HEADER ----- ----- */
-header {
-    background: url('./assets/Img/banner2.jpg') #49a3d6;
+/* ----- ----- HEADER y FOOTER ----- ----- */
+header{
+    background: url('./assets/Img/banner3.jpg') #49a3d6;
     background-repeat: no-repeat;
     background-position: center;
-    height: 400px;
+    height: 300px;
     width: auto;
+}
+footer{   
+    background: #222;
+    background-image: url("./assets/Img/imgback4.jpg");
+    height: 70px;
+    width: auto;
+    margin-top: 20px;
 }
 
 
-header .logo img {
+header .logo img,
+footer .logo img{
     height: 80px;
 }
 
-header .redes-sociales a {
+header .redes-sociales a,
+footer .redes-sociales a {
     border-radius: 40%;
     width: 2.5em;
     height: 2.5em;
@@ -32,19 +41,23 @@ header .redes-sociales a {
 
 }
 
-header .redes-sociales a.instagram {
+header .redes-sociales a.instagram,
+footer .redes-sociales a.instagram  {
     background: #c05554;
 }
 
-header .redes-sociales a.github {
+header .redes-sociales a.github,
+footer .redes-sociales a.github {
     background: #554488;
 }
 
-header .redes-sociales a.twitter {
+header .redes-sociales a.twitter,
+footer .redes-sociales a.twitter {
     background: #1da1f2;
 }
 
-header .redes-sociales a:hover {
+header .redes-sociales a:hover,
+footer .redes-sociales a:hover  {
     background: #222;
 }
 
@@ -60,7 +73,7 @@ header .btn {
 .main .foto img {
     border-radius: 20%;
     vertical-align: top;
-    border: 5px solid rgba(48, 113, 189, 0.4);
+    border: 5px solid rgba(194, 71, 173, 0.4);
 }
 
 .expe .caja,

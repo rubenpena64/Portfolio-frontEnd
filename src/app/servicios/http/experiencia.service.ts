@@ -7,9 +7,10 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ExperienciaService {
-  locExpe= 'http://localhost:8080/expe/';
+  //locExpe= 'http://localhost:8080/expe/';
+  locExpe= 'https://wonderful-susanetta-rubenpena64.koyeb.app/expe/';
+  //locExpe='';
   
-
   constructor(private httpC: HttpClient) { }
   
   public getTodas(): Observable<Experiencia[]>{

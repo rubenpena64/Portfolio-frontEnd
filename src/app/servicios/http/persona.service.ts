@@ -7,7 +7,7 @@ import { Persona } from '../../model/persona';
   providedIn: 'root'
 })
 export class PersonaService {
-  locGral= 'http://localhost:8080/persona/';
+  locGral= 'https://wonderful-susanetta-rubenpena64.koyeb.app/';
 
   constructor(private http: HttpClient) { }
 

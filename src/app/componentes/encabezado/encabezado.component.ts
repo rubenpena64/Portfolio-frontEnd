@@ -9,7 +9,7 @@ import { BtServiceService } from 'src/app/servicios/bt-service.service';
   styleUrls: ['./encabezado.component.css']
 })
 export class EncabezadoComponent implements OnInit {
-  txBoton: string="";
+  txBoton: string="Login";
   Logueado!: boolean;
   constructor(private btService: BtServiceService, private appRoute:Router) { }
   

@@ -8,9 +8,9 @@ import { Acerca } from 'src/app/model/acerca';
 })
 export class AcercaService {
 
-  locAcerca= 'http://localhost:8080/acerca/';
-  
-
+  //locAcerca= 'http://localhost:8080/acerca/';
+  locAcerca= 'https://wonderful-susanetta-rubenpena64.koyeb.app/acerca/';
+  //locAcerca='';
   constructor(private httpC: HttpClient) { }
   
   public getAcerca(): Observable<Acerca>{

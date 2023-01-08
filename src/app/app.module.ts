@@ -17,6 +17,7 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
 import { DobleTxFormComponent } from './componentes/doble-tx-form/doble-tx-form.component';
 import { DesaFormComponent } from './componentes/desa-form/desa-form.component';
 import { AcercaFormComponent } from './componentes/acerca-form/acerca-form.component';
+import { FootComponent } from './componentes/foot/foot.component';
 
 const appRoutes: Routes = [
   {path: '',component: InicioComponent},
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
     LoginComponent,
     DobleTxFormComponent,
     DesaFormComponent,
-    AcercaFormComponent
+    AcercaFormComponent,
+    FootComponent
   ],
   imports: [
     BrowserModule,

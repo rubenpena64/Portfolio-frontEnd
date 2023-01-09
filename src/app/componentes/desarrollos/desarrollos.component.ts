@@ -34,7 +34,7 @@ export class DesarrollosComponent implements OnInit {
     this.desaSer.getTodas().subscribe(data => {this.misDesa = data;}); // subcripcion al servicio http de datos
     this.btServ.onCambioBotones().subscribe(data => this.verBt = data);  // subcripcion al servicio de visibilidad de botones
     this.verBt = this.btServ.getbotonesVisible();   // Inicializacion de verBt
-    console.log(this.misDesa[0].titulo)
+    
   }
 
  /*LLamada por el formulario para editar un elemento

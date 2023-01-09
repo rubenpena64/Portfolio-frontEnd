@@ -13,7 +13,8 @@ export class DesarrollosService {
   constructor(private httpC: HttpClient) { }
 
   public getTodas(): Observable<Desarrollo[]> {
-    return this.httpC.get<Desarrollo[]>(this.locDesa + 'ver');
+    return this.httpC.get<Desarrollo[]>('https://wonderful-susanetta-rubenpena64.koyeb.app/proye/ver');
+    
   }
 
   public saveUna(expe: Desarrollo): Observable<any> {

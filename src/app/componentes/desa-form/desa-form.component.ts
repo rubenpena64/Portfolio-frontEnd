@@ -21,8 +21,8 @@ export class DesaFormComponent implements OnInit {
   emitirEditado() {
     if (this.validar()) {
       this.textos.Resultado = "Editado"
-      this.resultadoEvent.emit(this.textos);    
-    }   
+      this.resultadoEvent.emit(this.textos);
+    }
   }
 
   emitirCancel() {
@@ -30,16 +30,20 @@ export class DesaFormComponent implements OnInit {
     this.resultadoEvent.emit(this.textos);
   }
 
-  validar(): boolean { 
+  validar(): boolean {
     if (this.textos.tit.length < 5) {
       alert("El campo título debe contener al menos cinco caracteres")
       return false;
-    } else if (this.textos.desc.length < 30){
+    } else if (this.textos.desc.length < 30) {
       alert("El campo descripción debe contener al menos treinta caracteres")
       return false;
     }
-    else    
+    else {
+      if (this.textos.link == "") {
+        this.textos.link = "#";
+      }
       return true;
+    }
   }
 }
 /* Desarrollo de hardware y software de varios modelos de limitadores de carga, con lectura a una o dos celdas de carga, uno a cuatro relays, y salida RS232, RS485 y transmición inalámbrica por RF. Usé Altium Protel y C

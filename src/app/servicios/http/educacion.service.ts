@@ -8,7 +8,7 @@ import { Educacion } from 'src/app/model/educacion';
 })
 export class EducacionService {
   locEdu = 'https://wonderful-susanetta-rubenpena64.koyeb.app/edu/';
-  //locEdu='';
+  //locEdu='http://localhost:8080/edu/';
 
   constructor(private httpC: HttpClient) { }
 

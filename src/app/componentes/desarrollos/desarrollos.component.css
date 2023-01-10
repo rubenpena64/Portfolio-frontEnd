@@ -55,85 +55,24 @@
     color: #000;
 }
 /* Media queries proyectos */
-/*
-@media (max-width: 768px){
-    .caja .post .contenedor .contenedor-imagen-extracto{
-        flex-direction: column;
-    };
-    .caja .post .contenedor {
-        display: flex;
-        flex-direction: row;
-    }
-}
-*/
 
-/*
-.UnItem{
-    width: 100%;
-    height: 250px;
-    margin: 10px;    
-    box-shadow: 0px 0px 15px 3px rgba(255, 255, 255, 0.7);
-    margin: 20px;   
-    background: #ccc;
-}
 
- .UnItem .foto {
-    vertical-align: top;
-    height: auto;
-    padding: 20px;
+@media (max-width: 840px){
+    .thumber img {      
+       height: auto; 
+       width: 160px;  
+   }   
 }
- .UnItem .info {
-    
-    padding: 1.25em;
+@media (max-width: 574px){
+    .thumber img {      
+       height: auto; 
+       width: 350px;  
+    }   
 }
-
-.tituloDesa  a{
-    line-height: 1.125em;
-    margin-bottom: 1.25em;
-    font-size: 1.5em;
-    color: #3b3b3b;
-    text-decoration: none;
+@media (max-width: 450px){
+    .thumber img {      
+       height: auto; 
+       width: 230px;  
+    }   
+}
    
-}
-
-.descripDesa {
-    color: #292929;
-    font-size: 1em;
-    height: 8.125em;
-    max-height: 8.125em;
-    line-height: 1.75em;
-    margin-bottom: 1.25em;
-    overflow: hidden;
-}
-.tecnoDesa{
-    font-size: 1.3em;
-    color: #3b3b3b;
-}
-.crud2 a {
-    border-radius: 40%;
-    width: 2.5em;
-    height: 2.5em;
-    text-align: center;
-    line-height: 2.5em;
-    display: inline-block;
-    color: #222;
-}
-
-.crud2 a:Hover {
-    background: #222;
-    color: #ddd;
-}
-.crud a {
-    border-radius: 40%;
-    width: 2.5em;
-    height: 2.5em;
-    text-align: center;
-    line-height: 2.5em;
-    display: inline-block;
-    color: #fff;
-}
-
-.crud a:Hover {
-    background: #ddd;
-    color: #000;
-}*/

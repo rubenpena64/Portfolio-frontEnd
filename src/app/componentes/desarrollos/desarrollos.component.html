@@ -1,14 +1,14 @@
 <section class="desar" id="desa">
     <div class="container-xl caja">
         <div class="row">
-            <div class="col-11 tit">
+            <div class="col-md-10 col-8 tit ms-5">
                 <H4>Desarrollos</H4>
             </div>
             <!--Si hay que mostrar el boton para agregar--->
-            <div class="col-1 align-self-center text-center crud" *ngIf="verBt">
+            <div class="col-1 crud" *ngIf="verBt">
                  <!--Si se hizo click en el boton agregar se llama a agregarElemento()--->
-                <a (click)="agregarElemento()"><i class="bi bi-plus-square"></i></a>
-            </div>
+                <a (click)="agregarElemento()"><i class="bi bi-plus-square mx-2" ></i></a>
+            </div>  
         </div>
          <!--ngIf Si hay que mostrar el formulario para agregar un post--->
           <!--Si se hizo click en aceptar o cancelar del formulario se llama a editItemFin--->
@@ -23,10 +23,10 @@
                           <!--Si se hizo click en aceptar o cancelar del formulario se llama a editItemFin--->
                         <app-desa-form *ngIf="editFormu && indiceEdit==indice"
                             (resultadoEvent)="editItemFin($event)" [textos]="textosEditar"></app-desa-form>
-                        <div class="thumber col-12 col-xl-3">
+                        <div class="thumber col-12 col-sm-3">
                           <a><img src={{undesa.foto}} alt="Sin magen de {{undesa.titulo}}" /></a> 
                         </div>
-                        <div class="col-9 col-xl-6 info">
+                        <div class="col-10 col-sm-7 info">
                             <p class="h2 mt-3 titulo">      
                             <a href={{undesa.link}} target="_blank"> {{undesa.titulo}} </a>
                             </p>
@@ -34,7 +34,7 @@
                             
                         </div>
                         <!--Si hay que mostrar el boton para modificar o borrar--->
-                        <div class="col-3 col-xl-2 align-self-center text-end crud" *ngIf="verBt">
+                        <div class="col-1 align-self-center text-end crud" *ngIf="verBt">
                             <a (click)="editarElemento(indice)"><i class="bi bi-pencil"></i></a>
                             <a (click)="borrarElemento(indice)"><i class="bi bi-trash3"></i></a>
                         </div>

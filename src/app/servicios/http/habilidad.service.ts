@@ -8,7 +8,7 @@ import { Habilidad } from 'src/app/model/habilidades';
 })
 export class HabilidadService {
   locSkill= 'https://wonderful-susanetta-rubenpena64.koyeb.app/skill/';
-  //locSkill='';
+  //locSkill='http://localhost:8080/skill/';
 
   constructor(private httpC: HttpClient) { }
   

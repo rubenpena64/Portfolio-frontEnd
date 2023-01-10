@@ -8,12 +8,12 @@ import { Desarrollo } from 'src/app/model/desarrollos';
 })
 export class DesarrollosService {
   locDesa = 'https://wonderful-susanetta-rubenpena64.koyeb.app/proye/';
-  //locDesa='';
+  //locDesa= 'http://localhost:8080/proye/';
 
   constructor(private httpC: HttpClient) { }
 
   public getTodas(): Observable<Desarrollo[]> {
-    return this.httpC.get<Desarrollo[]>('https://wonderful-susanetta-rubenpena64.koyeb.app/proye/ver');
+    return this.httpC.get<Desarrollo[]>(this.locDesa +'ver');
     
   }
 

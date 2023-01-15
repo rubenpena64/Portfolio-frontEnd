@@ -17,9 +17,21 @@ El proyecto contiene:
  - un componente principal (inicio) donde están cargados cada uno de los módulos   
  - un componente que contiene la pantalla de logín
 
+## El componente inicio
+
+El componente inicio contiene todos los componentes del la vista inicial:
+
+- El componente encabezado (Estático)
+- El componente acerca (Estático. Era dinámico pero lo puse con textos fijos para reducir la cantidad total de servicios a cinco)
+- El componente experiencia (Dinámico)
+- El componente educacion (Dinámico)
+- El componente skills (Dinámico)
+- El componente desarrollos (Dinámico)
+- El componente foot (Estático)
+
  Cada uno de los componentes usa dos servicios:
 
-- Su propio servicio con los datos que llegan de la BD 
+- Su propio servicio con los datos que llegan de la BD. Ubicado en la carpeta servicios/tttp/
 - Un servicio que consumen todos los múdulos con los datos de visibilidad o no de los botones, segun está logeado o no.
 
 ## Funcionamiento de cada componente

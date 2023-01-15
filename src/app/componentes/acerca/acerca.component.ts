@@ -20,15 +20,17 @@ export class AcercaComponent implements OnInit {
   textosEditar!: TripleTexto;
 
 
-  constructor(public aceSer: AcercaService, private btServ: BtServiceService, private ruta: Router) {
+  constructor( private ruta: Router) {
   }
-
+  ngOnInit(): void {
+       }
+ /*******  Se quita esto para minimizar la cantidad de servicios a Koyeb *********
   ngOnInit(): void {
    this.cargarTodo();
   }
   cargarTodo() {
     
-    this.aceSer.getAcerca().subscribe(data => { this.miAcerca = data; });
+    //this.aceSer.getAcerca().subscribe(data => { this.miAcerca = data; });
     this.btServ.onCambioBotones().subscribe(data => this.verBt = data);
     this.verBt = this.btServ.getbotonesVisible();
   }
@@ -39,6 +41,8 @@ export class AcercaComponent implements OnInit {
     this.textosEditar.Resultado = "";
     this.editFormu = true;
   }
+ 
+
   editFin(result: TripleTexto) {
     
     if (result.Resultado != "Cancel") {
@@ -56,7 +60,7 @@ export class AcercaComponent implements OnInit {
     }
     this.editFormu = false;    
     this.btServ.setBtVisibles();
-  }
+  }*/
 
 
 

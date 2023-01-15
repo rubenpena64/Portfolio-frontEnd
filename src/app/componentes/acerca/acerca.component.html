@@ -16,17 +16,21 @@
             </div>
 
         </div>
-        <app-acerca-form *ngIf="editFormu" (resultadoEvent)="editFin($event)" [textos]="textosEditar"></app-acerca-form>  
+      <!--  <app-acerca-form *ngIf="editFormu" (resultadoEvent)="editFin($event)" [textos]="textosEditar"></app-acerca-form> -->
         <div class="row mx-3">
             <div class="col-9 text-light font-weight-light">    
-                       
+                <p>Desarrollador de sistemas embebidos en AyL Integral Trade. También he dasarrolado pequeños software de escritorio para PC y telefonos móviles.</p>
+                <p>Radicado en General Pacheco, Buenos Aires. rubenpena@gmail.com</p>
+                <p>Fotógrafo amateur</p>   
+            </div>     
+               <!-- Se quita esto para minimizar la cantidad de servicios a Koyeb
                 <p>{{ miAcerca.linea1 }}</p>
                 <p>{{ miAcerca.linea2 }}</p>
-                <p>{{miAcerca.linea3 }}</p>                 
+                <p>{{miAcerca.linea3 }}</p>           
             </div>
             <div class="col-3 align-self-center text-end crud" *ngIf="verBt"   >
                 <a (click)="editar()"><i class="bi bi-pencil"></i></a>           
-            </div>
+            </div>  -->     
         </div>
     </div>
 </section>

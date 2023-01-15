@@ -7,9 +7,9 @@ import { Acerca } from 'src/app/model/acerca';
   providedIn: 'root'
 })
 export class AcercaService {
-
-  //locAcerca= 'http://localhost:8080/acerca/';
-  locAcerca= 'https://wonderful-susanetta-rubenpena64.koyeb.app/acerca/';
+/*
+  locAcerca= 'http://localhost:8080/acerca/';
+  //locAcerca= 'https://wonderful-susanetta-rubenpena64.koyeb.app/acerca/';
  
   constructor(private httpC: HttpClient) { }
   
@@ -21,6 +21,6 @@ export class AcercaService {
       return this.httpC.put<any>(this.locAcerca +  `editar/${id}`,ace);   
     
   }
- 
+ */
 }
 
